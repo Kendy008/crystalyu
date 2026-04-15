@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>晶禹科技有限公司 | 領先的光學與高分子材料解決方案專家</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .group:hover .dropdown-menu {
+            display: block;
+            animation: slideIn 0.2s ease forwards;
+        }
+
+        .dropdown-menu::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .page-content {
+            display: none;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .category-tag {
+            display: inline-block;
+            padding: 2px 10px;
+            background: #e0f2fe;
+            color: #0369a1;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- 導覽列 -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <button onclick="showPage('home')" class="flex items-center group">
+                        <img src="https://www.dropbox.com/scl/fi/3i4quvxbzr2ndzvmy01cv/logo.png?rlkey=cxi8eac3mnbld4a0kycu9uy3j&st=z82m69d9&dl=1" alt="晶禹科技 Logo" class="h-10 w-auto object-contain transition-transform group-hover:scale-105">
+                        <div class="ml-3 flex flex-col items-start leading-tight text-left">
+                            <span class="text-gray-900 font-bold text-lg md:text-xl tracking-tight">晶禹科技有限公司</span>
+                            <span class="text-blue-600 font-medium text-[10px] md:text-xs uppercase tracking-[0.15em] opacity-80">Crystal Yu technology Co.,Ltd.</span>
+                        </div>
+                    </button>
+                </div>
+                
+                <div class="hidden lg:flex space-x-8 items-center">
+                    <button onclick="showPage('home')" class="nav-link text-gray-700 hover:text-blue-600 font-medium">首頁</button>
+                    <button onclick="showPage('about')" class="nav-link text-gray-700 hover:text-blue-600 font-medium">關於我們</button>
+                    
+                    <div class="relative group pt-2 pb-2">
+                        <button class="nav-link text-gray-700 hover:text-blue-600 font-medium flex items-center h-full">
+                            技術與產品 <i class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        <div class="dropdown-menu absolute hidden left-0 w-64 bg-white shadow-2xl mt-2 rounded-xl border border-gray-100 py-3 overflow-hidden">
+                            <button onclick="showPage('p1')" class="block px-6 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 w-full text-left font-medium transition-colors">
+                                光學解決方案
+                            </button>
+                            <button onclick="showPage('p2')" class="block px-6 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 w-full text-left font-medium transition-colors">
+                                功能性塗料與薄膜
+                            </button>
+                            <button onclick="showPage('p3')" class="block px-6 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 w-full text-left font-medium transition-colors">
+                                先進材料開發
+                            </button>
+                            <button onclick="showPage('p4')" class="block px-6 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 w-full text-left font-medium transition-colors">
+                                高性能工程塑料
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 p-2 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-6 space-y-2 shadow-lg">
+            <button onclick="showPage('home')" class="block w-full text-left py-3 text-gray-700 font-bold border-b border-gray-50">首頁</button>
+            <button onclick="showPage('about')" class="block w-full text-left py-3 text-gray-700 font-bold border-b border-gray-50">關於我們</button>
+            <div class="py-2">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 px-1">產品分類</p>
+                <button onclick="showPage('p1')" class="block w-full text-left py-2 text-blue-600 pl-4 text-sm font-medium">光學解決方案</button>
+                <button onclick="showPage('p2')" class="block w-full text-left py-2 text-blue-600 pl-4 text-sm font-medium">功能性塗料與薄膜</button>
+                <button onclick="showPage('p3')" class="block w-full text-left py-2 text-blue-600 pl-4 text-sm font-medium">先進材料開發</button>
+                <button onclick="showPage('p4')" class="block w-full text-left py-2 text-blue-600 pl-4 text-sm font-medium">高性能工程塑料</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        
+        <!-- 首頁內容 -->
+        <div id="home" class="page-content active">
+            <!-- 英雄區塊：標題已按要求修正 -->
+            <section class="hero-gradient text-white py-24 px-6 md:py-32 overflow-hidden relative">
+                <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center relative z-10">
+                    <div class="md:w-3/5 mb-12 md:mb-0 text-left">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.2] mb-8">
+                            整合材料科學與光學設計<br>
+                            <span class="text-blue-400">驅動科技無限可能</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl leading-relaxed opacity-90">
+                            從精密光學設計到次世代功能性塗層，我們結合跨領域技術，為半導體、車載及消費電子提供量身定制的材料方案。
+                        </p>
+                        <div class="flex space-x-4">
+                            <button onclick="showPage('p1')" class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition shadow-lg shadow-blue-500/30">查看產品目錄</button>
+                            <button onclick="showPage('about')" class="border border-white/30 hover:bg-white hover:text-blue-900 text-white px-8 py-4 rounded-full font-bold transition backdrop-blur-sm">瞭解更多</button>
+                        </div>
+                    </div>
+                    <div class="md:w-2/5 relative flex justify-center">
+                        <div class="w-64 h-64 md:w-80 md:h-80 bg-blue-400/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/10 shadow-inner relative">
+                            <div class="absolute inset-0 border-2 border-blue-400/20 rounded-full animate-ping" style="animation-duration: 3s;"></div>
+                            <i class="fas fa-microchip text-[100px] text-blue-400 opacity-60"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 核心亮點 -->
+            <section class="py-24 px-6 max-w-7xl mx-auto">
+                <div class="text-center mb-20">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">全方位解決方案</h2>
+                    <p class="text-gray-500 max-w-2xl mx-auto">整合光學設計、材料工程與全球代理資源，支持您的研發與量產需求。</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- 分類 1 -->
+                    <div onclick="showPage('p1')" class="product-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 cursor-pointer text-left">
+                        <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6 text-2xl shadow-inner">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">光學解決方案</h3>
+                        <ul class="text-gray-500 text-xs space-y-1 mb-4">
+                            <li>• 成像/非成像光學設計</li>
+                            <li>• 鏡頭開發與模組整合</li>
+                            <li>• 雷射與 LED 配光系統</li>
+                        </ul>
+                        <div class="mt-auto text-blue-600 font-medium text-sm flex items-center">技術詳情 <i class="fas fa-arrow-right ml-2 text-xs"></i></div>
+                    </div>
+                    <!-- 分類 2 -->
+                    <div onclick="showPage('p2')" class="product-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 cursor-pointer text-left">
+                        <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-6 text-2xl shadow-inner">
+                            <i class="fas fa-vials"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">功能性塗料與薄膜</h3>
+                        <ul class="text-gray-500 text-xs space-y-1 mb-4">
+                            <li>• 散熱塗料 (SiC/AlN)</li>
+                            <li>• 半導體切割保護材料</li>
+                            <li>• 奈米壓印與防霧膜</li>
+                        </ul>
+                        <div class="mt-auto text-emerald-600 font-medium text-sm flex items-center">技術詳情 <i class="fas fa-arrow-right ml-2 text-xs"></i></div>
+                    </div>
+                    <!-- 分類 3 -->
+                    <div onclick="showPage('p3')" class="product-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 cursor-pointer text-left">
+                        <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-6 text-2xl shadow-inner">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">先進材料開發</h3>
+                        <ul class="text-gray-500 text-xs space-y-1 mb-4">
+                            <li>• 鈣鈦礦光電材料</li>
+                            <li>• 碳纖維粉與複合材料</li>
+                            <li>• EMI 屏蔽與輕量化方案</li>
+                        </ul>
+                        <div class="mt-auto text-indigo-600 font-medium text-sm flex items-center">技術詳情 <i class="fas fa-arrow-right ml-2 text-xs"></i></div>
+                    </div>
+                    <!-- 分類 4 -->
+                    <div onclick="showPage('p4')" class="product-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 cursor-pointer text-left">
+                        <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-6 text-2xl shadow-inner">
+                            <i class="fas fa-box-open"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">高性能工程塑料</h3>
+                        <ul class="text-gray-500 text-xs space-y-1 mb-4">
+                            <li>• 代理 Avient 高性能材料</li>
+                            <li>• PPS / LCP / PEEK</li>
+                            <li>• 耐熱、低 CTE 應用</li>
+                        </ul>
+                        <div class="mt-auto text-amber-600 font-medium text-sm flex items-center">技術詳情 <i class="fas fa-arrow-right ml-2 text-xs"></i></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 關於我們頁面 -->
+        <div id="about" class="page-content">
+            <section class="py-24 px-6 bg-white">
+                <div class="max-w-4xl mx-auto text-left">
+                    <h2 class="text-4xl font-bold mb-10 border-l-8 border-blue-600 pl-6 text-gray-900 tracking-tight">專業背景與願景</h2>
+                    <div class="prose prose-lg text-gray-600 space-y-8">
+                        <p class="text-xl leading-relaxed text-gray-700">
+                            晶禹科技有限公司的團隊夥伴長期深耕於<strong>精密光學設計</strong>與<strong>高分子材料化學</strong>兩大關鍵領域。我們不只是材料供應商，更是您的<strong>技術開發合作夥伴</strong>。
+                        </p>
+                        <div class="grid md:grid-cols-3 gap-6 my-12">
+                            <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-sm">
+                                <h4 class="font-bold text-gray-900 mb-2">材料創新</h4>
+                                <p class="text-xs text-gray-500">持續研發功能性塗層與次世代光電材料，應對極端環境需求。</p>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-sm">
+                                <h4 class="font-bold text-gray-900 mb-2">光學設計</h4>
+                                <p class="text-xs text-gray-500">具備精密成像與非成像光學模擬能力，協助客戶優化光學效能。</p>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-sm">
+                                <h4 class="font-bold text-gray-900 mb-2">整合供應</h4>
+                                <p class="text-xs text-gray-500">代理全球一線高性能材料品牌，縮短客戶研發與量產週期。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 技術詳情頁面 (P1-P4) 同前... -->
+        <div id="p1" class="page-content">
+            <section class="py-24 px-6 max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-left border-b pb-4">光學解決方案 <span class="text-gray-400 font-normal text-lg">Optical Solutions</span></h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="space-y-8">
+                        <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 text-left">
+                            <h3 class="text-2xl font-bold text-blue-600 mb-4">成像光學 (Imaging Optics)</h3>
+                            <p class="text-gray-600 mb-6">核心定位：光學設計 + 元件開發整合能力</p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i> <div><strong>鏡頭設計 (Lens Design)：</strong> 精密成像光學系統模擬。</div></li>
+                                <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i> <div><strong>光學鏡片開發：</strong> 玻璃與塑膠鏡片優化開發。</div></li>
+                                <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i> <div><strong>模組整合 (Camera Module)：</strong> 影像系統完整封裝支援。</div></li>
+                            </ul>
+                            <div class="mt-6 p-4 bg-blue-50 rounded-xl">
+                                <p class="text-sm font-bold text-blue-800">應用：光通訊、工業檢測、車載/空拍機影像、AR / VR</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-8">
+                        <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 text-left">
+                            <h3 class="text-2xl font-bold text-indigo-600 mb-4">非成像光學 (Non-Imaging)</h3>
+                            <p class="text-gray-600 mb-6">核心定位：專業光源導引與均光系統</p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mt-1 mr-3"></i> <div><strong>雷射光學設計：</strong> 精準光斑與光束控制技術。</div></li>
+                                <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mt-1 mr-3"></i> <div><strong>LED 二次配光設計：</strong> 提升發光效率與均勻度。</div></li>
+                                <li class="flex items-start"><i class="fas fa-check-circle text-indigo-500 mt-1 mr-3"></i> <div><strong>感測系統設計：</strong> 生醫與光電檢測專用光路。</div></li>
+                            </ul>
+                            <div class="mt-6 p-4 bg-indigo-50 rounded-xl">
+                                <p class="text-sm font-bold text-indigo-800">應用：光源模組、感測系統、生醫與光電設備</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="p2" class="page-content">
+            <section class="py-24 px-6 max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-left border-b pb-4">功能性塗料與薄膜 <span class="text-gray-400 font-normal text-lg">Advanced Coatings & Films</span></h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 text-left flex flex-col">
+                        <span class="category-tag">散熱管理</span>
+                        <h3 class="text-xl font-bold mb-4">散熱塗料 (Thermal)</h3>
+                        <ul class="text-sm space-y-2 flex-grow">
+                            <li>• <strong>SiC (碳化矽) 散熱塗料</strong></li>
+                            <li>• <strong>AlN (氮化鋁) 散熱塗料</strong></li>
+                            <li>• 導電 / 非導電散熱方案</li>
+                            <li class="pt-2 text-emerald-600 font-medium">👉 特性：高導熱、絕緣可選、高溫穩定</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 text-left flex flex-col">
+                        <span class="category-tag">半導體與光學</span>
+                        <h3 class="text-xl font-bold mb-4">保護材料 (Protection)</h3>
+                        <ul class="text-sm space-y-2 flex-grow">
+                            <li>• <strong>光學水溶膠：</strong> Wafer / Lens 保護</li>
+                            <li>• 晶圓切割保護塗料</li>
+                            <li>• 運輸與存放保護層</li>
+                            <li class="pt-2 text-emerald-600 font-medium">👉 特性：可剝離/水洗、無殘留、高潔淨</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 text-left flex flex-col">
+                        <span class="category-tag">微結構光學</span>
+                        <h3 class="text-xl font-bold mb-4">奈米壓印與光學塗料</h3>
+                        <ul class="text-sm space-y-2 flex-grow">
+                            <li>• <strong>NIL 奈米壓印光學塗層</strong></li>
+                            <li>• 光波導塗料 (Waveguide)</li>
+                            <li>• 防霧 / 防霜功能薄膜</li>
+                            <li class="pt-2 text-emerald-600 font-medium">👉 應用：AR/VR、光通訊、鏡片防霧</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="p3" class="page-content">
+            <section class="py-24 px-6 max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-left border-b pb-4">先進材料開發 <span class="text-gray-400 font-normal text-lg">Advanced Materials</span></h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="flex flex-col md:flex-row bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden text-left">
+                        <div class="md:w-1/3 bg-indigo-600 flex items-center justify-center p-8">
+                            <i class="fas fa-sun text-6xl text-white opacity-40"></i>
+                        </div>
+                        <div class="md:w-2/3 p-8">
+                            <h3 class="text-2xl font-bold mb-4">鈣鈦礦材料 (Perovskite)</h3>
+                            <p class="text-gray-600 text-sm mb-4">次世代光學與能源應用的核心。我們專注於光電材料的配方開發，支持高效能光感測器與太陽能組件。</p>
+                            <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">太陽能 | 光感測器 | 光電元件</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden text-left">
+                        <div class="md:w-1/3 bg-gray-800 flex items-center justify-center p-8">
+                            <i class="fas fa-shield-alt text-6xl text-white opacity-40"></i>
+                        </div>
+                        <div class="md:w-2/3 p-8">
+                            <h3 class="text-2xl font-bold mb-4">碳纖維粉與複合材料</h3>
+                            <p class="text-gray-600 text-sm mb-4">T300/T700 等級應用延伸。提供輕量化、高強度與卓越的 EMI 屏蔽能力。</p>
+                            <span class="text-xs font-bold text-gray-600 bg-gray-100 px-3 py-1 rounded-full">車載 | 航太 | 電子封裝</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="p4" class="page-content">
+            <section class="py-24 px-6 max-w-5xl mx-auto">
+                <div class="bg-amber-50 rounded-3xl p-12 text-left border border-amber-100">
+                    <div class="flex items-center mb-10">
+                        <div class="bg-amber-600 text-white px-6 py-2 rounded-xl font-bold mr-6">主要代理品牌</div>
+                        <h2 class="text-4xl font-bold text-gray-900">Avient 高性能材料</h2>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-6 mb-12">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm">
+                            <h4 class="text-amber-700 font-bold text-xl mb-2">PPS</h4>
+                            <p class="text-xs text-gray-500">聚苯硫醚</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm">
+                            <h4 class="text-amber-700 font-bold text-xl mb-2">LCP</h4>
+                            <p class="text-xs text-gray-500">液晶高分子</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm">
+                            <h4 class="text-amber-700 font-bold text-xl mb-2">PEEK</h4>
+                            <p class="text-xs text-gray-500">聚醚醚酮</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 頁腳 -->
+    <footer class="bg-gray-900 text-gray-400 py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-2 text-left">
+                    <div class="flex items-center mb-8">
+                        <img src="https://www.dropbox.com/scl/fi/3i4quvxbzr2ndzvmy01cv/logo.png?rlkey=cxi8eac3mnbld4a0kycu9uy3j&st=z82m69d9&dl=1" alt="Logo" class="h-10 brightness-0 invert opacity-90">
+                        <div class="ml-3 flex flex-col items-start leading-tight border-l border-gray-700 pl-4">
+                            <span class="text-white font-bold text-lg tracking-tight">晶禹科技有限公司</span>
+                            <span class="text-blue-400 font-medium text-[10px] uppercase tracking-wider opacity-70">Crystal Yu technology Co.,Ltd.</span>
+                        </div>
+                    </div>
+                    <p class="max-w-md leading-relaxed text-sm">致力於精密光學設計與前沿材料技術的融合，透過一站式整合開發模式，為您的產品提供卓越的核心競爭力。</p>
+                </div>
+                <div class="text-left">
+                    <h4 class="text-white font-bold mb-6 tracking-widest uppercase text-xs">產品與技術</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><button onclick="showPage('p1')" class="hover:text-blue-400 transition">光學解決方案</button></li>
+                        <li><button onclick="showPage('p2')" class="hover:text-blue-400 transition">功能性塗層</button></li>
+                        <li><button onclick="showPage('p3')" class="hover:text-blue-400 transition">先進材料開發</button></li>
+                        <li><button onclick="showPage('p4')" class="hover:text-blue-400 transition">工程塑料代理</button></li>
+                    </ul>
+                </div>
+                <div class="text-left">
+                    <h4 class="text-white font-bold mb-6 tracking-widest uppercase text-xs">聯絡諮詢</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-500"></i>
+                            <span>台中市清水區星海路18巷17號</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-blue-500"></i>
+                            <span>+886 910617737</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-blue-500"></i>
+                            <span>kendyjojo@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-10 text-xs flex flex-col md:flex-row justify-between items-center opacity-60">
+                <p>&copy; 2024 晶禹科技有限公司 All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <span>專業研發</span>
+                    <span>材料創新</span>
+                    <span>解決方案</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+
+            const currentPage = document.getElementById(pageId);
+            if (currentPage) {
+                currentPage.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        window.onload = function() {
+            showPage('home');
+        }
+    </script>
+</body>
+</html>
