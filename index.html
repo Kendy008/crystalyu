@@ -413,6 +413,12 @@
     const IconCheckCircle = ({ className = "w-5 h-5" }) => (
       <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
     );
+    const IconLine = ({ className = "w-5 h-5" }) => (
+      <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.7 10.1c0-4.5-4.6-8.1-10.3-8.1S1.1 5.6 1.1 10.1c0 4 3.9 7.4 9.1 8 .4.1.9.3 1 .6.1.3.1.8 0 1.1l-.2 1.1c-.1.3-.2 1.3 1 0 .5-.5 1.9-1.5 3.3-2.5 3.8-1.2 6.4-4.2 6.4-7.9Zm-13.8 2.4H5.8c-.3 0-.5-.2-.5-.5V8.1c0-.3.2-.5.5-.5s.5.2.5.5v3.4h1.6c.3 0 .5.2.5.5s-.2.5-.5.5Zm2.1-.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5V8.1c0-.3.2-.5.5-.5s.5.2.5.5V12Zm4.2 0c0 .2-.1.4-.3.5h-.2c-.2 0-.3-.1-.4-.2l-2.1-2.8V12c0 .3-.2.5-.5.5s-.5-.2-.5-.5V8.1c0-.2.1-.4.3-.5.2-.1.4 0 .5.2l2.1 2.8V8.1c0-.3.2-.5.5-.5s.5.2.5.5V12Zm3.1.5h-2.1c-.3 0-.5-.2-.5-.5V8.1c0-.3.2-.5.5-.5h2.1c.3 0 .5.2.5.5s-.2.5-.5.5h-1.6v.9h1.6c.3 0 .5.2.5.5s-.2.5-.5.5h-1.6v.9h1.6c.3 0 .5.2.5.5s-.2.6-.5.6Z" /></svg>
+    );
+    const IconFacebook = ({ className = "w-5 h-5" }) => (
+      <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.7-1.6h1.8V3.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.5v3h2.8v8h3.2Z" /></svg>
+    );
 
     const CATEGORIES = [
       {
@@ -1429,6 +1435,20 @@
                     公司地址：43616 台中市清水區星海路18巷17號<br />
                     統一編號：94020346
                   </p>
+                </div>
+              </div>
+              <div className="border-t border-gray-700 pt-6 pb-8 flex justify-center">
+                <div className="flex flex-wrap justify-center gap-2">
+                  <a href="https://lin.ee/TSq2d9m" target="_blank" rel="noreferrer" aria-label="加入 LINE 聯絡晶禹科技"
+                    className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-600 text-itri-midgray hover:text-white hover:border-[#06C755] transition">
+                    <span className="text-[#06C755]"><IconLine className="w-4 h-4" /></span>
+                    <span className="text-xs font-semibold">LINE</span>
+                  </a>
+                  <a href="https://www.facebook.com/crystalyu.tech" target="_blank" rel="noreferrer" aria-label="前往晶禹科技 Facebook"
+                    className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-600 text-itri-midgray hover:text-white hover:border-[#1877F2] transition">
+                    <span className="text-[#1877F2]"><IconFacebook className="w-4 h-4" /></span>
+                    <span className="text-xs font-semibold">Facebook</span>
+                  </a>
                 </div>
               </div>
               <div className="pt-8 border-t border-gray-700 text-center text-itri-midgray text-[11px]">
