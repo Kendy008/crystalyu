@@ -641,14 +641,14 @@
       const [contactModalMessage, setContactModalMessage] = useState('');
       const iframeRef = useRef(null);
 
-      const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSeuEvyMnbBpUfmwsHVizJDf_fyfyQPdOXV_3tQcSKB0-y-ITw/formResponse';
+      const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSf4sluUMOvij6gZUXjaz-yzDH2ht4zL18WC2jqhgilAtaqRfQ/formResponse';
       const GOOGLE_FORM_FIELDS = {
-        name: 'entry.1828672223',
-        company: 'entry.267269794',
-        email: 'entry.98510672',
-        phone: 'entry.540037173',
-        category: 'entry.48382572',
-        description: 'entry.1915382228'
+        name: 'entry.485956314',
+        company: 'entry.948369039',
+        email: 'entry.594370760',
+        phone: 'entry.1908957481',
+        category: 'entry.1016993692',
+        description: 'entry.572783834'
       };
 
       const initialContactForm = {
@@ -682,10 +682,7 @@
               [GOOGLE_FORM_FIELDS.category, contactForm.category],
               [GOOGLE_FORM_FIELDS.description, contactForm.description],
               ['fvv', '1'],
-              ['partialResponse', '[null,null,"1445690265061088753"]'],
-              ['pageHistory', '0'],
-              ['fbzx', '1445690265061088753'],
-              ['submissionTimestamp', '-1']
+              ['pageHistory', '0']
             ];
 
             hiddenFields.forEach(([name, value]) => {
@@ -706,32 +703,7 @@
         };
 
         const formSubmitted = submitHiddenForm();
-        if (!formSubmitted) return false;
-
-        try {
-          const formData = new URLSearchParams();
-          formData.append(GOOGLE_FORM_FIELDS.name, contactForm.name || '');
-          formData.append(GOOGLE_FORM_FIELDS.company, contactForm.company || '');
-          formData.append(GOOGLE_FORM_FIELDS.email, contactForm.email || '');
-          formData.append(GOOGLE_FORM_FIELDS.phone, contactForm.phone || '');
-          formData.append(GOOGLE_FORM_FIELDS.category, contactForm.category || '');
-          formData.append(GOOGLE_FORM_FIELDS.description, contactForm.description || '');
-          formData.append('fvv', '1');
-          formData.append('partialResponse', '[null,null,"1445690265061088753"]');
-          formData.append('pageHistory', '0');
-          formData.append('fbzx', '1445690265061088753');
-          formData.append('submissionTimestamp', '-1');
-
-          await fetch(GOOGLE_FORM_ACTION, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
-            body: formData.toString()
-          });
-          return true;
-        } catch (error) {
-          return true;
-        }
+        return formSubmitted;
       };
 
       const handleContactSubmit = async (e) => {
@@ -746,7 +718,10 @@
 
         const submitted = await submitToGoogleForm();
 
+        let submissionFinished = false;
         const finishSubmission = () => {
+          if (submissionFinished) return;
+          submissionFinished = true;
           setContactForm(initialContactForm);
           setIsContactSubmitting(false);
           setContactModalMessage(
