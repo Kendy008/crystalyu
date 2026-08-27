@@ -742,41 +742,41 @@
               },
               {
                 id: 'nano-coating-new-formula-environment-optical-calibration',
-                title: '奈米散熱塗料（新配方）環境與光學校正熱效能驗證報告',
+                title: '奈米散熱塗料環境與光學校正熱效能驗證報告',
                 type: '驗證報告',
                 status: 'published',
                 date: '2026 年 8 月 13 日',
-                file: 'mywork/20260813 奈米散熱塗料（新配方）環境與光學校正熱效能驗證報告.docx',
-                summary: '在冷氣房控制環境與完成發射率校正後，驗證奈米散熱塗料新配方的熱效能與紅外線量測一致性。',
-                purpose: '透過穩定環境條件、FLIR 發射率校正及接觸式熱電偶交叉比對，建立新配方奈米散熱塗料熱效能驗證與溫度判讀的可靠基準。',
-                testTarget: '奈米散熱塗料新配方之環境穩定性、熱影像光學校正與末端降溫效能',
+                file: 'mywork/20260813 奈米散熱塗料環境與光學校正熱效能驗證報告.docx',
+                summary: '在冷氣房控制環境與完成發射率校正後，驗證奈米散熱塗料的熱效能與紅外線量測一致性。',
+                purpose: '透過穩定環境條件、FLIR 發射率校正及接觸式熱電偶交叉比對，建立奈米散熱塗料熱效能驗證與溫度判讀的可靠基準。',
+                testTarget: '奈米散熱塗料之環境穩定性、熱影像光學校正與末端降溫效能',
                 testGroups: [
                   { label: '測試環境', value: '冷氣房控制環境，降低背景溫度波動並穩定對流場' },
                   { label: 'T1 對照組', value: '裸鋁片材，FLIR 發射率 ε = 0.20' },
-                  { label: 'T2 實驗組', value: '奈米散熱塗料新配方片材，FLIR 發射率 ε = 0.95' },
+                  { label: 'T2 實驗組', value: '奈米散熱塗料片材，FLIR 發射率 ε = 0.95' },
                   { label: '量測方式', value: '接觸式熱電偶與 FLIR 紅外線熱像儀交叉驗證' },
                   { label: '數據誤差', value: '光學表面溫度與熱電偶基材溫度誤差小於 1.5°C' }
                 ],
                 photos: [
-                  { src: 'mywork/tech-report-new-formula/temperature-curve-new-formula.jpeg', title: '新配方冷氣房溫升曲線', caption: '冷氣房控制環境下，T1 裸鋁片材末端穩態 88.4°C，T2 新配方塗料片材末端穩態 80.4°C，ΔT 約 8.0°C。' },
+                  { src: 'mywork/tech-report-new-formula/temperature-curve-new-formula.jpeg', title: '冷氣房溫升曲線', caption: '冷氣房控制環境下，T1 裸鋁片材末端穩態 88.4°C，T2 塗料片材末端穩態 80.4°C，ΔT 約 8.0°C。' },
                   { src: 'mywork/tech-report-new-formula/flir-heater-calibration-new-formula.jpeg', title: '自然環境溫升曲線交叉比較', caption: '作為自然環境與冷氣房環境的交叉驗證，塗料片材 T2 維持約 80.4°C 的穩態溫度。' },
-                  { src: 'mywork/tech-report-new-formula/flir-coated-sample-new-formula.jpg', title: 'T2 新配方塗料片熱像', caption: 'FLIR 發射率 ε = 0.95，量測溫度約 87.1°C，對應熱電偶測點附近區域。' },
+                  { src: 'mywork/tech-report-new-formula/flir-coated-sample-new-formula.jpg', title: 'T2 塗料片熱像', caption: 'FLIR 發射率 ε = 0.95，量測溫度約 87.1°C，對應熱電偶測點附近區域。' },
                   { src: 'mywork/tech-report-new-formula/flir-bare-aluminum-new-formula.jpg', title: 'T1 裸鋁片熱像', caption: 'FLIR 發射率 ε = 0.20，量測溫度約 80.2°C，修正低發射率造成的反射誤差。' }
                 ],
                 measurements: [
                   { distance: '冷氣房穩態', control: '88.4', coated: '80.4', delta: '8.0' }
                 ],
-                measurementLabels: { distance: '量測條件', control: 'T1 裸鋁片材 (°C)', coated: 'T2 新配方 (°C)', delta: '降溫效益 ΔT (°C)' },
+                measurementLabels: { distance: '量測條件', control: 'T1 裸鋁片材 (°C)', coated: 'T2 (°C)', delta: '降溫效益 ΔT (°C)' },
                 measurementNote: '接觸式熱電偶量測：ΔT = T1 − T2；T1 為 88.4°C、T2 為 80.4°C，降溫幅度約 9.05%。FLIR 與熱電偶數據誤差小於 1.5°C。',
                 mechanism: [
                   { title: '環境條件穩定化', text: '冷氣房控制環境降低背景溫度波動，使熱對流場更穩定，提升測試數據的重複性與可信度。' },
                   { title: '發射率光學校正', text: 'T1 裸鋁發射率修正為 ε = 0.20，T2 塗料維持 ε = 0.95，消除裸鋁低發射率造成的紅外線反射與虛假低溫。' },
-                  { title: '高發射率輻射散熱', text: 'T2 在維持高發射率的同時，讓基材穩定維持較低溫度，支持新配方透過遠紅外線輻射與對流協同釋放熱量。' }
+                  { title: '高發射率輻射散熱', text: 'T2 在維持高發射率的同時，讓基材穩定維持較低溫度，支持塗料透過遠紅外線輻射與對流協同釋放熱量。' }
                 ],
                 findings: [
-                  '冷氣房環境下，T2 新配方片材末端穩態溫度為 80.4°C，較 T1 裸鋁片材 88.4°C 低 8.0°C，降溫幅度約 9.05%。',
+                  '冷氣房環境下，T2 塗料片材末端穩態溫度為 80.4°C，較 T1 裸鋁片材 88.4°C 低 8.0°C，降溫幅度約 9.05%。',
                   'FLIR 發射率校正後，熱像儀與接觸式熱電偶數據誤差小於 1.5°C，修正裸鋁片材過去 34.9°C 的虛假低溫現象。',
-                  '新配方在自然通風與恆溫冷氣環境下皆維持穩定降溫效果，具備熱管理應用的工程參考價值。'
+                  '塗料在自然通風與恆溫冷氣環境下皆維持穩定降溫效果，具備熱管理應用的工程參考價值。'
                 ],
                 relatedProducts: ['高輻射奈米散熱塗料', '非導電型奈米散熱塗料']
               },
@@ -851,7 +851,7 @@
             id: 'thermal-fillers',
             title: '高導熱與絕緣填料',
             reports: [
-              { id: 'sic-aln-comparison', title: 'SiC 與 AlN 高導熱填料的應用比較', type: '材料解析', status: 'coming-soon', relatedProducts: ['SiC 高純度微粉', 'AlN高純度粉體'] }
+              { id: 'sic-aln-comparison', title: '高導熱填料的應用比較', type: '材料解析', status: 'coming-soon', relatedProducts: [] }
             ]
           },
           {
