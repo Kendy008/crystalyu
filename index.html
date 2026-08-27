@@ -624,6 +624,214 @@
       }
     ];
 
+    const TECH_REPORT_GROUPS = [
+      {
+        id: 'optical-solutions',
+        title: '光學解決方案',
+        titleEN: 'Optical Solutions',
+        accentColor: '#006CB7',
+        subcategories: [
+          {
+            id: 'uav-surveillance-optics',
+            title: '無人機與安防監控光學',
+            reports: [
+              {
+                id: 'lwir-efl-85mm-imaging',
+                title: 'LWIR 長波紅外光學鏡頭 EFL 85mm 熱影像拍攝',
+                type: '影像展示',
+                status: 'published',
+                date: '2026 年 8 月',
+                summary: '展示 LWIR EFL 85mm 長波紅外光學鏡頭於戶外遠距場景的熱影像成像效果，觀察建物、道路車輛與戶外物件的溫度對比與細節解析能力。',
+                purpose: '透過實際戶外場景影像，呈現 EFL 85mm 長波紅外光學鏡頭在遠距離觀測、安防監控與熱源辨識應用中的成像表現。',
+                testTarget: 'LWIR EFL 85mm 長波紅外光學鏡頭遠距熱影像成像展示',
+                testGroups: [
+                  { label: '鏡頭規格', value: 'LWIR 長波紅外光學鏡頭，EFL 85mm' },
+                  { label: '影像類型', value: '長波紅外線熱影像' },
+                  { label: '拍攝場景', value: '戶外建物、道路車輛與物件場景' },
+                  { label: '應用方向', value: '遠距觀測、安防監控與熱源辨識' }
+                ],
+                photos: [
+                  { src: 'mywork/85mm_1.jpg', title: '戶外建物遠距熱影像', caption: 'EFL 85mm 鏡頭拍攝城市建物與屋頂場景，呈現遠距結構細節。' },
+                  { src: 'mywork/85mm_2.jpg', title: '道路與車輛熱影像', caption: '道路、車輛與周邊植栽的紅外線影像對比。' },
+                  { src: 'mywork/85mm_3.jpg', title: '戶外物件熱影像', caption: '戶外堆料與遮蔽物場景的長波紅外線成像展示。' }
+                ],
+                measurements: [],
+                mechanism: [
+                  { title: '遠距細節辨識', text: '85mm 等效焦距適合擷取較遠距離場景，協助辨識建物輪廓、車輛與戶外物件細節。' },
+                  { title: '溫度對比成像', text: '長波紅外影像可透過不同物件的熱輻射差異呈現場景層次，支援夜間與低可見度環境觀測。' },
+                  { title: '安防監控應用', text: '影像展示可作為遠距安防、周界監控、設備巡檢與熱源辨識系統的鏡頭評估參考。' }
+                ],
+                findings: [
+                  'EFL 85mm 長波紅外鏡頭可呈現戶外遠距場景的結構與物件差異。',
+                  '實際影像可作為鏡頭視野、細節解析與熱影像系統整合評估的展示素材。'
+                ],
+                relatedProducts: ['LWIR 長波紅外光學鏡頭']
+              },
+              { id: 'uav-thermal-imaging', title: '無人機熱成像鏡頭的設計考量', type: '技術解析', status: 'coming-soon', relatedProducts: ['LWIR LENS'] },
+              { id: 'long-range-surveillance', title: '高空長焦監控的光學系統規劃', type: '應用指南', status: 'coming-soon', relatedProducts: ['LWIR LENS'] }
+            ]
+          },
+          {
+            id: 'laser-optics',
+            title: '雷射與精密光學',
+            reports: [
+              { id: 'ld-collimation', title: 'LD 模壓玻璃鏡片與雷射準直', type: '技術解析', status: 'coming-soon', relatedProducts: ['LD Molding Glass LENS'] },
+              { id: 'precision-molded-optics', title: '精密模壓光學的焦距精度管理', type: '製程知識', status: 'coming-soon', relatedProducts: ['LD Molding Glass LENS'] }
+            ]
+          },
+          {
+            id: 'environmental-optics',
+            title: '極端環境與光學材料',
+            reports: [
+              { id: 'high-temperature-silicone', title: '高溫與 UV 環境下的矽膠透鏡選型', type: '材料筆記', status: 'coming-soon', relatedProducts: ['Silicone LENS'] },
+              { id: 'quartz-optical-window', title: '深紫外應用的石英光學窗', type: '材料筆記', status: 'coming-soon', relatedProducts: ['Quartz LENS'] }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'functional-coatings-films',
+        title: '功能性塗料與薄膜',
+        titleEN: 'Functional Coatings & Films',
+        accentColor: '#2E7D6B',
+        subcategories: [
+          {
+            id: 'thermal-management',
+            title: '散熱與熱管理',
+            reports: [
+              {
+                id: 'copper-fin-nano-coating-evaluation',
+                title: '銅散熱鰭片（裸銅 vs 奈米散熱塗料）效能評估報告',
+                type: '效能評估',
+                status: 'published',
+                date: '2026 年 8 月 12 日',
+                summary: '比較裸銅與表面噴塗奈米散熱塗料之銅質擠型散熱鰭片，評估熱傳導、熱輻射與末端降溫效能。',
+                purpose: '本報告透過 FLIR 熱影像與末端接觸式熱電偶，分析奈米散熱塗料在紙箱防擾流環境中的散熱表現，評估其對銅質散熱鰭片末端溫度的改善效果。',
+                testTarget: '裸銅鰭片與奈米散熱塗料鰭片之熱傳導、熱輻射與末端降溫效能對比',
+                testGroups: [
+                  { label: 'T1 對照組', value: '裸銅散熱鰭片' },
+                  { label: 'T2 實驗組', value: '表面噴塗奈米散熱塗料之銅鰭片' },
+                  { label: '鰭片尺寸', value: '長 76.8 × 寬 22 × 高 7.4 mm，內部中空微通道' },
+                  { label: '熱源設定', value: '前端加熱板 100°C；FLIR 實測中心約 103°C' },
+                  { label: '量測方式', value: '熱由前端沿 76.8 mm 方向傳導，T1/T2 量測鰭片末端' },
+                  { label: '測試環境', value: '紙箱防擾流環境，降低外部氣流干擾' }
+                ],
+                photos: [
+                  { src: 'mywork/tech-report-copper-fin/flir-heater-calibration.jpg', title: '加熱源校正熱影像', caption: '加熱板中心實測約 103°C，確認熱源輸出穩定。' },
+                  { src: 'mywork/tech-report-copper-fin/flir-coated-fin.jpg', title: '奈米散熱塗料鰭片 FLIR 影像', caption: '塗層表面顯示約 93.4°C，具較高紅外線熱發射特性。' },
+                  { src: 'mywork/tech-report-copper-fin/flir-bare-copper-fin.jpg', title: '裸銅鰭片 FLIR 影像', caption: '裸銅表面低發射率，熱影像顯示溫度約 34.2°C，需搭配熱電偶判讀末端實際溫度。' },
+                  { src: 'mywork/tech-report-copper-fin/test-setup-copper-fin.jpg', title: '銅鰭片測試配置', caption: '裸銅與塗層鰭片並列於紙箱防擾流環境中進行測試。' },
+                  { src: 'mywork/tech-report-copper-fin/temperature-curve.jpg', title: 'T1 vs T2 末端溫度曲線', caption: '本次測試顯示，塗層鰭片末端溫度低於裸銅鰭片。' }
+                ],
+                measurements: [
+                  { distance: '本次測試', control: '90.8', coated: '86.4', delta: '4.4' }
+                ],
+                measurementLabels: { distance: '測試批次／日期', control: 'T1 裸銅末端', coated: 'T2 塗層末端', delta: '降溫效益 ΔT（°C）' },
+                measurementNote: 'ΔT = T1 裸銅末端溫度 − T2 塗層末端溫度；正值代表奈米散熱塗料帶來的末端降溫效益。',
+                mechanism: [
+                  { title: '裸銅的輻射瓶頸', text: '銅具有約 385 W/m·K 的高導熱係數，但裸銅表面發射率約 0.03 至 0.05，限制熱能以輻射形式向外釋放。' },
+                  { title: '塗層提升熱發射率', text: '奈米散熱塗料將表面發射率提升至約 0.90 至 0.95，使沿鰭片傳導的熱能能更有效轉換為紅外線熱輻射。' },
+                  { title: '輻射與對流協同散熱', text: '在無強迫對流的防擾流環境中，塗層仍帶來 4.4°C 末端降溫效益，顯示高效熱輻射與空氣對流共同降低熱量累積。' }
+                ],
+                findings: [
+                  '在紙箱防擾流環境下，塗層鰭片末端溫度為 86.4°C，較裸銅鰭片的 90.8°C 低 4.4°C。',
+                  '防擾流測試降低外部氣流變動造成的曲線震盪，有助於提升量測穩定度與結果判讀的一致性。',
+                  '奈米散熱塗料適合無風扇、高密度封閉模組、密閉機殼及空間受限的電子熱管理應用。'
+                ],
+                relatedProducts: ['非導電型奈米散熱塗料', '高輻射奈米散熱塗料']
+              },
+              {
+                id: 'non-conductive-thermal-transfer-analysis',
+                title: '非導電型奈米散熱塗料熱傳遞效能測試與熱場分析',
+                type: '測試報告',
+                status: 'published',
+                date: '2026 年 8 月 25 日',
+                file: 'mywork/20260825 非導電型散熱塗料熱傳遞效能測試與熱場分析.docx',
+                summary: '以懸浮熱電偶量測半密閉空間內不同高度的空氣溫度，分析非導電型奈米散熱塗料如何透過熱輻射與熱對流釋放鋁基板熱能。',
+                testTarget: '散熱塗料輻射散熱效能與半密閉空間熱場梯度檢測',
+                purpose: '透過半密閉空間內的分段懸浮量測，觀察裸鋁與非導電型散熱塗料試片周圍的溫度梯度，驗證塗層是否能將基板熱能有效釋放至周圍空氣。',
+                mechanism: [
+                  { title: '熱邊界層傳熱', text: '0.5 mm 處 T2 為 84.8°C，高於 T1 的 78.8°C，顯示塗層能降低固氣交界面的熱阻，快速將基板熱能傳遞至空氣邊界層。' },
+                  { title: '輻射熱的空間傳遞', text: '量測距離增加至 5.5 mm 時，T1 降至 55.2°C，而 T2 仍為 67.4°C；溫差由 6.0°C 擴大至 12.2°C，支持塗層具有空間熱輻射傳遞效果。' },
+                  { title: '半密閉空間效應', text: '紙箱環境降低外部氣流干擾，使釋放的輻射熱被周圍空氣與壁面吸收，再透過熱對流帶走，形成輻射與對流耦合的散熱路徑。' }
+                ],
+                photos: [
+                  { src: 'mywork/tech-report-non-conductive/test-setup-overview.jpg', title: '測試裝置全景', caption: 'T1 裸鋁試片與 T2 塗料試片置於半密閉量測空間。' },
+                  { src: 'mywork/tech-report-non-conductive/thermocouple-measurement.jpg', title: '熱電偶懸浮量測', caption: '熱電偶以不同懸浮高度量測試片周圍的空氣溫度。' },
+                  { src: 'mywork/不同熱電偶高度T1 vs T2溫差.jpg', title: '不同熱電偶高度 T1 vs T2 溫差', caption: 'T1 與 T2 在不同熱電偶高度的溫度曲線與溫差比較。' }
+                ],
+                testGroups: [
+                  { label: 'T1 對照組', value: '裸鋁試片' },
+                  { label: 'T2 實驗組', value: '噴塗非導電型散熱塗料之鋁試片' },
+                  { label: '量測配置', value: '0.5 至 5.5 mm，共 6 個高度梯度' },
+                  { label: '測試環境', value: '半密閉空間（紙箱），降低外部氣流干擾' }
+                ],
+                measurements: [
+                  { distance: '0.5', control: '78.8', coated: '84.8', delta: '-6.0' },
+                  { distance: '1.5', control: '73.8', coated: '78.4', delta: '-4.6' },
+                  { distance: '2.5', control: '69.4', coated: '74.2', delta: '-4.8' },
+                  { distance: '3.5', control: '65.4', coated: '71.8', delta: '-6.4' },
+                  { distance: '4.5', control: '59.4', coated: '69.4', delta: '-10.0' },
+                  { distance: '5.5', control: '55.2', coated: '67.4', delta: '-12.2' }
+                ],
+                findings: [
+                  '塗料提高鋁基板表面紅外輻射率，將蓄積熱更有效率地傳遞至空氣邊界層。',
+                  '在 5.5 mm 距離處，T2 空間溫度比 T1 高 12.2°C，顯示熱場差異隨距離擴大。',
+                  '半密閉空間的量測結果支持散熱塗料產生輻射－對流耦合散熱的物理機制。'
+                ],
+                relatedProducts: ['非導電型奈米散熱塗料']
+              }
+            ]
+          },
+          {
+            id: 'semiconductor-process-protection',
+            title: '半導體與精密製程防護',
+            reports: [
+              { id: 'water-soluble-gel', title: '水溶膠在精密製程中的暫時保護應用', type: '應用指南', status: 'coming-soon', relatedProducts: ['水溶膠'] },
+              { id: 'dust-control-esd', title: '無塵室除塵與靜電控制的製程要點', type: '製程知識', status: 'coming-soon', relatedProducts: ['光學鏡片／模仁／晶圓除塵棒', '長效型靜電消除劑'] }
+            ]
+          },
+          {
+            id: 'optical-films',
+            title: '光學薄膜與表面功能',
+            reports: [
+              { id: 'anti-fog-film', title: '溫差環境下的長效防霧防霜設計', type: '技術解析', status: 'coming-soon', relatedProducts: ['長效型防霧膜 / 防霜膜'] },
+              { id: 'nanoimprint-coating', title: 'NIL 奈米壓印光學塗料的關鍵參數', type: '材料筆記', status: 'coming-soon', relatedProducts: ['奈米壓印光學塗料'] }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'advanced-materials',
+        title: '先進材料開發',
+        titleEN: 'Advanced Materials Development',
+        accentColor: '#6A5ACD',
+        subcategories: [
+          {
+            id: 'thermal-fillers',
+            title: '高導熱與絕緣填料',
+            reports: [
+              { id: 'sic-aln-comparison', title: 'SiC 與 AlN 高導熱填料的應用比較', type: '材料解析', status: 'coming-soon', relatedProducts: ['SiC 高純度微粉', 'AlN高純度粉體'] }
+            ]
+          },
+          {
+            id: 'composite-materials',
+            title: '複合材料與結構強化',
+            reports: [
+              { id: 'carbon-fiber-reinforcement', title: '碳纖維粉於輕量化結構的強化策略', type: '應用指南', status: 'coming-soon', relatedProducts: ['高純度碳纖維粉'] }
+            ]
+          },
+          {
+            id: 'material-development',
+            title: '配方開發與量產導入',
+            reports: [
+              { id: 'material-scale-up', title: '從材料配方到量產良率的開發流程', type: '研發流程', status: 'coming-soon', relatedProducts: ['高純度碳纖維粉', 'SiC 高純度微粉', 'AlN高純度粉體'] }
+            ]
+          }
+        ]
+      }
+    ];
+
     function App() {
       const [currentTab, setCurrentTab] = useState('functional-coatings-films');
       const [activeNav, setActiveNav] = useState('home'); // 修正：將預設頁面從 'products' 變更為 'home'
@@ -633,6 +841,9 @@
       const [searchQuery, setSearchQuery] = useState('');
       const [lang, setLang] = useState('ZH');
       const [toastMsg, setToastMsg] = useState(null);
+      const [techReportGroupId, setTechReportGroupId] = useState(TECH_REPORT_GROUPS[0].id);
+      const [techReportSubcategoryId, setTechReportSubcategoryId] = useState(TECH_REPORT_GROUPS[0].subcategories[0].id);
+      const [selectedTechReport, setSelectedTechReport] = useState(null);
 
       const [contactForm, setContactForm] = useState({
         name: '',
@@ -767,6 +978,9 @@
           return matchSearch;
         });
       }, [currentCategoryObj, searchQuery]);
+
+      const activeTechReportGroup = TECH_REPORT_GROUPS.find(group => group.id === techReportGroupId) || TECH_REPORT_GROUPS[0];
+      const activeTechSubcategory = activeTechReportGroup.subcategories.find(subcategory => subcategory.id === techReportSubcategoryId) || activeTechReportGroup.subcategories[0];
 
       const showToast = (text) => {
         setToastMsg(text);
@@ -1281,7 +1495,7 @@
             <main className="flex-1 py-12">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <div className="relative overflow-hidden rounded-3xl bg-white border border-itri-lightgray p-8 sm:p-12 shadow-md min-h-[280px] flex items-center">
+                <div className="relative overflow-hidden rounded-3xl bg-white border border-itri-lightgray p-8 sm:p-12 shadow-md min-h-[280px] flex items-center mb-8 sm:mb-10">
                   <div className="relative z-10 max-w-3xl">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-itri-blue/10 border border-itri-blue/20 text-itri-blue text-xs font-bold mb-4">
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
@@ -1291,9 +1505,153 @@
                       晶禹技術專欄
                     </h1>
                     <p className="text-itri-gray text-sm sm:text-base leading-relaxed font-normal">
-                      專欄內容準備中，敬請期待。
+                      以三大產品主軸整理技術解析、應用指南、材料筆記與製程知識，持續累積可查找的技術內容。
                     </p>
                   </div>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-6 lg:gap-8 items-start">
+                  <aside className="bg-white rounded-2xl border border-itri-lightgray p-4 shadow-sm lg:sticky lg:top-24">
+                    <div className="text-xs font-bold text-itri-gray mb-3 px-2">產品主軸</div>
+                    <div className="space-y-1.5">
+                      {TECH_REPORT_GROUPS.map(group => (
+                        <button
+                          key={group.id}
+                          onClick={() => {
+                            setTechReportGroupId(group.id);
+                            setTechReportSubcategoryId(group.subcategories[0].id);
+                            setSelectedTechReport(null);
+                          }}
+                          className={`w-full text-left px-3 py-2.5 rounded-xl text-sm font-bold transition border-l-4 ${techReportGroupId === group.id ? 'bg-itri-extralight text-itri-dark' : 'text-itri-gray hover:bg-itri-extralight'}`}
+                          style={{ borderLeftColor: techReportGroupId === group.id ? group.accentColor : 'transparent' }}
+                        >
+                          {group.title}
+                        </button>
+                      ))}
+                    </div>
+                    <div className="border-t border-itri-lightgray mt-4 pt-4">
+                      <div className="text-xs font-bold text-itri-gray mb-2 px-2">次分類</div>
+                      <div className="space-y-1">
+                        {activeTechReportGroup.subcategories.map(subcategory => (
+                          <button
+                            key={subcategory.id}
+                            onClick={() => {
+                              setTechReportSubcategoryId(subcategory.id);
+                              setSelectedTechReport(null);
+                            }}
+                            className={`w-full text-left px-3 py-2 rounded-lg text-xs transition ${techReportSubcategoryId === subcategory.id ? 'bg-itri-blue/10 text-itri-blue font-bold' : 'text-itri-gray hover:bg-itri-extralight'}`}
+                          >
+                            {subcategory.title}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </aside>
+
+                  <section>
+                    <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-5">
+                      <div>
+                        <div className="text-xs font-mono font-bold uppercase" style={{ color: activeTechReportGroup.accentColor }}>{activeTechReportGroup.titleEN}</div>
+                        <h2 className="text-2xl sm:text-3xl font-extrabold text-itri-dark mt-1">{activeTechSubcategory.title}</h2>
+                      </div>
+                      <span className="text-xs text-itri-gray">{activeTechSubcategory.reports.length} 篇報告</span>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {activeTechSubcategory.reports.map(report => (
+                        <article key={report.id} className="bg-white rounded-2xl border border-itri-lightgray p-5 sm:p-6 shadow-sm hover:shadow-md hover:border-itri-blue transition flex flex-col min-h-[220px]">
+                          <div className="flex items-center justify-between gap-3 mb-5">
+                            <span className="text-[11px] font-bold px-2.5 py-1 rounded border bg-itri-blue/10 text-itri-blue border-itri-blue/20">{report.type}</span>
+                            <span className={`text-[10px] font-bold ${report.status === 'published' ? 'text-itri-green' : 'text-itri-midgray'}`}>{report.status === 'published' ? '已發布' : '即將發布'}</span>
+                          </div>
+                          <h3 className="text-lg font-bold text-itri-dark leading-snug mb-3">{report.title}</h3>
+                          {report.summary && <p className="text-xs text-itri-gray leading-relaxed mb-4">{report.summary}</p>}
+                          <div className="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-itri-lightgray">
+                            {report.relatedProducts.map(product => (
+                              <span key={product} className="text-[10px] text-itri-gray bg-itri-extralight px-2 py-1 rounded border border-itri-lightgray">{product}</span>
+                            ))}
+                          </div>
+                          {report.status === 'published' && (
+                            <button onClick={() => setSelectedTechReport(report)} className="mt-4 w-full py-2.5 rounded-xl bg-itri-blue text-white text-xs font-bold hover:bg-itri-blue/90 transition">閱讀完整報告</button>
+                          )}
+                        </article>
+                      ))}
+                    </div>
+
+                    {selectedTechReport && (
+                      <article className="mt-6 bg-white rounded-2xl border border-itri-lightgray p-5 sm:p-8 shadow-md">
+                        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
+                          <div>
+                            <div className="text-xs font-bold text-itri-green mb-2">{selectedTechReport.type} · {selectedTechReport.date}</div>
+                            <h3 className="text-xl sm:text-2xl font-black text-itri-dark leading-snug">{selectedTechReport.title}</h3>
+                          </div>
+                          <button onClick={() => setSelectedTechReport(null)} className="shrink-0 text-xs text-itri-gray hover:text-itri-blue transition">收合報告</button>
+                        </div>
+
+                        <div className="bg-itri-extralight rounded-xl p-4 sm:p-5 mb-6">
+                          <div className="text-xs font-bold text-itri-dark mb-2">報告摘要</div>
+                          <p className="text-sm text-itri-gray leading-relaxed">{selectedTechReport.summary}</p>
+                        </div>
+
+                        <section className="mb-7">
+                          <h4 className="text-sm font-bold text-itri-dark mb-3">一、測試目的</h4>
+                          <p className="text-xs sm:text-sm text-itri-gray leading-relaxed">{selectedTechReport.purpose}</p>
+                        </section>
+
+                        <section className="mb-7">
+                          <h4 className="text-sm font-bold text-itri-dark mb-3">二、測試現場與量測照片</h4>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            {selectedTechReport.photos.map(photo => (
+                              <figure key={photo.src} className="overflow-hidden rounded-xl border border-itri-lightgray bg-itri-extralight">
+                                <img src={photo.src} alt={photo.title} className="w-full aspect-[4/3] object-cover" />
+                                <figcaption className="p-3"><div className="text-xs font-bold text-itri-dark">{photo.title}</div><div className="text-[11px] text-itri-gray mt-1 leading-relaxed">{photo.caption}</div></figcaption>
+                              </figure>
+                            ))}
+                          </div>
+                        </section>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-7">
+                          <div>
+                            <h4 className="text-sm font-bold text-itri-dark mb-3">三、測試條件與配置</h4>
+                            <div className="space-y-2">
+                              {selectedTechReport.testGroups.map(item => (
+                                <div key={item.label} className="flex gap-3 text-xs border-b border-itri-lightgray pb-2">
+                                  <span className="font-bold text-itri-gray shrink-0">{item.label}</span>
+                                  <span className="text-itri-dark">{item.value}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                          <div>
+                            <h4 className="text-sm font-bold text-itri-dark mb-3">測試標的</h4>
+                            <p className="text-xs text-itri-gray leading-relaxed">{selectedTechReport.testTarget}</p>
+                            <div className="mt-4 text-[11px] text-itri-gray">{selectedTechReport.measurementNote || '數據依報告中的量測定義呈現。'}</div>
+                          </div>
+                        </div>
+
+                        {selectedTechReport.measurements?.length > 0 && (
+                          <>
+                            <h4 className="text-sm font-bold text-itri-dark mb-3">四、溫度量測數據（°C）</h4>
+                            <div className="overflow-x-auto mb-7">
+                              <table className="w-full min-w-[480px] text-xs text-left border-collapse">
+                                <thead><tr className="bg-itri-extralight text-itri-gray"><th className="p-3 font-bold">{selectedTechReport.measurementLabels?.distance || '量測位置'}</th><th className="p-3 font-bold">{selectedTechReport.measurementLabels?.control || 'T1 對照組'}</th><th className="p-3 font-bold">{selectedTechReport.measurementLabels?.coated || 'T2 實驗組'}</th><th className="p-3 font-bold">{selectedTechReport.measurementLabels?.delta || 'ΔT'}</th></tr></thead>
+                                <tbody>{selectedTechReport.measurements.map(item => <tr key={item.distance} className="border-b border-itri-lightgray"><td className="p-3 text-itri-dark">{item.distance}</td><td className="p-3 text-itri-gray">{item.control}</td><td className="p-3 text-itri-green font-bold">{item.coated}</td><td className="p-3 text-itri-blue font-bold">{item.delta}</td></tr>)}</tbody>
+                              </table>
+                            </div>
+                          </>
+                        )}
+
+                        <h4 className="text-sm font-bold text-itri-dark mb-3">五、數據分析與物理機制</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+                          {selectedTechReport.mechanism.map(item => (
+                            <div key={item.title} className="rounded-xl border border-itri-lightgray bg-itri-extralight p-4"><div className="text-xs font-bold text-itri-dark mb-2">{item.title}</div><p className="text-[11px] text-itri-gray leading-relaxed">{item.text}</p></div>
+                          ))}
+                        </div>
+                        <h4 className="text-sm font-bold text-itri-dark mb-3">六、結論與工程評價</h4>
+                        <ul className="space-y-2 mb-7">{selectedTechReport.findings.map(finding => <li key={finding} className="flex gap-2 text-xs text-itri-gray leading-relaxed"><span className="text-itri-green font-bold">✓</span><span>{finding}</span></li>)}</ul>
+                      </article>
+                    )}
+                  </section>
                 </div>
 
               </div>
