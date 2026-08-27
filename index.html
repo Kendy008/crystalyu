@@ -596,7 +596,7 @@
             tags: ['無人機輕量化', '高導電', '耐磨耗'],
             desc: '用於工程塑膠、無人機碳纖維機身強化、導電塗料及碳碳複合材料，大幅提升基材強度、導電性與散熱性能。',
             badge: '高強度',
-            datasheet: { name: '產品簡介', file: 'CY-DS-Carbon-Fiber-Powder.pdf' }
+            datasheet: null
           },
           {
             id: 'sic-powder',
@@ -607,7 +607,7 @@
             tags: ['SiC高純度', '高導熱填料', '奈米散熱塗料應用'],
             desc: '作為高效奈米散熱塗料之核心 SiC 高純度高導熱機能填料，顯著提升塗層熱傳導與熱輻射效能，提供優異的工業防護與穩定性。',
             badge: '散熱塗料關鍵',
-            datasheet: { name: '產品簡介', file: 'CY-DS-SiC-Powder.pdf' }
+            datasheet: null
           },
           {
             id: 'ain-nitride',
@@ -618,7 +618,7 @@
             tags: ['高導熱係數', '絕緣非導電', '低介電'],
             desc: '具備優異高導熱與高絕緣特性，為非導電型奈米散熱塗料、高功率模組與電子元件散熱之核心絕緣機能填料。',
             badge: '絕緣散熱首選',
-            datasheet: { name: '產品簡介', file: 'CY-DS-AlN-Powder.pdf' }
+            datasheet: null
           }
         ]
       }
@@ -884,6 +884,7 @@
       const [techReportGroupId, setTechReportGroupId] = useState(TECH_REPORT_GROUPS[0].id);
       const [techReportSubcategoryId, setTechReportSubcategoryId] = useState(TECH_REPORT_GROUPS[0].subcategories[0].id);
       const [selectedTechReport, setSelectedTechReport] = useState(null);
+      const [selectedProductSpec, setSelectedProductSpec] = useState(null);
 
       const [contactForm, setContactForm] = useState({
         name: '',
@@ -1021,6 +1022,12 @@
 
       const activeTechReportGroup = TECH_REPORT_GROUPS.find(group => group.id === techReportGroupId) || TECH_REPORT_GROUPS[0];
       const activeTechSubcategory = activeTechReportGroup.subcategories.find(subcategory => subcategory.id === techReportSubcategoryId) || activeTechReportGroup.subcategories[0];
+
+      const openProductSpec = (product) => {
+        setSelectedProductSpec(product);
+        setActiveNav('product-spec');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
 
       const showToast = (text) => {
         setToastMsg(text);
@@ -1274,6 +1281,13 @@
               {activeNav !== 'home' && <span>/</span>}
               {activeNav === 'about' && <span className="text-itri-blue font-semibold">關於晶禹科技</span>}
               {activeNav === 'tech-column' && <span className="text-itri-blue font-semibold">技術專欄</span>}
+              {activeNav === 'product-spec' && (
+                <>
+                  <span className="hover:text-itri-blue cursor-pointer" onClick={() => setActiveNav('products')}>產品與技術</span>
+                  <span>/</span>
+                  <span className="text-itri-blue font-semibold">{selectedProductSpec?.nameZH || '產品規格'}</span>
+                </>
+              )}
               {activeNav === 'products' && (
                 <>
                   <span className="hover:text-itri-blue cursor-pointer" onClick={() => setActiveNav('products')}>產品與技術</span>
@@ -1501,31 +1515,138 @@
                         </div>
                       </div>
 
-                      <div className="pt-4 border-t border-itri-lightgray flex items-center justify-between gap-3">
-                        {product.datasheet ? (
+                      {(product.id === 'ain-nitride' || product.id === 'sic-powder') && (
+                        <div className="pt-4 border-t border-itri-lightgray flex items-center justify-between gap-3">
                           <button
-                            onClick={() => handleDownloadProductSpec(product.nameZH, product.datasheet)}
+                            onClick={() => openProductSpec(product)}
                             className="w-full py-2.5 rounded-xl bg-itri-blue hover:bg-itri-blue/90 text-white text-xs font-bold transition flex items-center justify-center gap-2 shadow-sm active:scale-[0.98]"
                           >
-                            <IconDownload className="w-3.5 h-3.5" />
-                            <span>下載技術規格簡報 (PDF)</span>
+                            <IconArrowRight className="w-3.5 h-3.5" />
+                            <span>查看產品規格</span>
                           </button>
-                        ) : (
-                          <button
-                            onClick={() => {
-                              const el = document.getElementById('contact-section');
-                              if (el) el.scrollIntoView({ behavior: 'smooth' });
-                            }}
-                            className="w-full py-2.5 rounded-xl bg-itri-extralight hover:bg-itri-lightgray text-itri-dark text-xs font-medium transition text-center border border-itri-lightgray active:scale-[0.98]"
-                          >
-                            專案客製洽詢
-                          </button>
-                        )}
-                      </div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
 
+              </div>
+            </main>
+          )}
+
+          {/* PRODUCT SPECIFICATION PAGE */}
+          {activeNav === 'product-spec' && selectedProductSpec?.id === 'ain-nitride' && (
+            <main className="flex-1 py-10 sm:py-14">
+              <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="bg-white rounded-2xl border border-itri-lightgray shadow-sm overflow-hidden">
+                  <div className="p-6 sm:p-10 border-b border-itri-lightgray bg-gradient-to-r from-itri-purple/10 to-white">
+                    <button onClick={() => { setActiveNav('products'); setCurrentTab('advanced-materials'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="inline-flex items-center gap-1.5 text-xs font-bold text-itri-blue hover:text-itri-teal transition mb-5">
+                      <span aria-hidden="true">←</span>
+                      返回先進材料開發
+                    </button>
+                    <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5">
+                      <div>
+                        <div className="text-xs font-mono font-bold text-itri-purple uppercase mb-2">Advanced Thermal Powder</div>
+                        <h1 className="text-2xl sm:text-3xl font-black text-itri-dark">AlN高純度粉體</h1>
+                        <p className="text-sm text-itri-gray mt-2">氮化鋁粉末（Aluminum Nitride Powder）產品規格書</p>
+                      </div>
+                      <img src="mywork/氮化鋁粉.jpg" alt="AlN 氮化鋁粉末" className="w-28 h-24 object-cover rounded-xl border border-itri-lightgray" />
+                    </div>
+                  </div>
+                  <div className="p-6 sm:p-10 space-y-9">
+                    <section>
+                      <h2 className="text-lg font-bold text-itri-dark mb-3">產品概述</h2>
+                      <p className="text-sm text-itri-gray leading-7">本產品為高純度氮化鋁（AlN）微粉，具備高導熱性、良好的電絕緣性與低介電常數，適用於高導熱填料、半導體封裝、導熱墊片及各類高散熱複合材料。</p>
+                    </section>
+                    <section>
+                      <h2 className="text-lg font-bold text-itri-dark mb-3">基本物理與化學特性</h2>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-sm">
+                        <div className="flex justify-between border-b border-itri-lightgray pb-2"><span className="text-itri-gray">化學式</span><strong>AlN</strong></div>
+                        <div className="flex justify-between border-b border-itri-lightgray pb-2"><span className="text-itri-gray">CAS 號碼</span><strong>24304-00-5</strong></div>
+                        <div className="flex justify-between border-b border-itri-lightgray pb-2"><span className="text-itri-gray">外觀</span><strong>灰白色粉末</strong></div>
+                        <div className="flex justify-between border-b border-itri-lightgray pb-2"><span className="text-itri-gray">熔點</span><strong>3000°C</strong></div>
+                        <div className="flex justify-between border-b border-itri-lightgray pb-2"><span className="text-itri-gray">密度</span><strong>3.26 g/cm³</strong></div>
+                      </div>
+                    </section>
+                    <section>
+                      <h2 className="text-lg font-bold text-itri-dark mb-3">化學成分與質量指標（COA）</h2>
+                      <div className="overflow-x-auto border border-itri-lightgray rounded-xl">
+                        <table className="w-full min-w-[560px] text-sm text-left">
+                          <thead className="bg-itri-extralight text-itri-gray"><tr><th className="p-3 font-bold">檢測項目（Item）</th><th className="p-3 font-bold">標準值（Standard）</th><th className="p-3 font-bold">實測結果（Result）</th><th className="p-3 font-bold">單位</th></tr></thead>
+                          <tbody>
+                            {[['氮含量（N）', '32.0～34.0', '32.5', '%'], ['氧含量（O）', '1.0～2.0', '1.4', '%'], ['碳含量（C）', '< 500', '262', 'ppm'], ['鐵（Fe）', '< 400', '300', 'ppm'], ['矽（Si）', '< 200', '173', 'ppm'], ['鎳（Ni）', '< 10', '9', 'ppm'], ['鎢（W）', '< 20', '9', 'ppm'], ['鋅（Zn）', '< 8', '6', 'ppm'], ['鈣（Ca）', '< 1', '< 1', 'ppm']].map(row => (
+                              <tr key={row[0]} className="border-t border-itri-lightgray"><td className="p-3 text-itri-dark">{row[0]}</td><td className="p-3 text-itri-gray">{row[1]}</td><td className="p-3 text-itri-green font-bold">{row[2]}</td><td className="p-3 text-itri-gray">{row[3]}</td></tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                    <section>
+                      <h2 className="text-lg font-bold text-itri-dark mb-3">物理性能規格</h2>
+                      <div className="inline-flex items-center gap-3 rounded-xl bg-itri-blue/5 border border-itri-blue/20 px-4 py-3 text-sm"><span className="font-bold text-itri-blue">平均粒徑（D50）</span><span className="text-itri-dark">1～3 μm</span></div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </main>
+          )}
+
+          {/* SiC PRODUCT SPECIFICATION PAGE */}
+          {activeNav === 'product-spec' && selectedProductSpec?.id === 'sic-powder' && (
+            <main className="flex-1 py-10 sm:py-14">
+              <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="bg-white rounded-2xl border border-itri-lightgray shadow-sm overflow-hidden">
+                  <div className="p-6 sm:p-10 border-b border-itri-lightgray bg-gradient-to-r from-itri-blue/10 to-white">
+                    <button onClick={() => { setActiveNav('products'); setCurrentTab('advanced-materials'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="inline-flex items-center gap-1.5 text-xs font-bold text-itri-blue hover:text-itri-teal transition mb-5">
+                      <span aria-hidden="true">←</span>
+                      返回先進材料開發
+                    </button>
+                    <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5">
+                      <div>
+                        <div className="text-xs font-mono font-bold text-itri-blue uppercase mb-2">High Purity SiC Powder</div>
+                        <h1 className="text-2xl sm:text-3xl font-black text-itri-dark">SiC 高純度微粉</h1>
+                        <p className="text-sm text-itri-gray mt-2">碳化矽微粉（Silicon Carbide Powder）產品規格書</p>
+                      </div>
+                      <img src="mywork/碳化矽(綠).jpg" alt="SiC 碳化矽微粉" className="w-28 h-24 object-cover rounded-xl border border-itri-lightgray" />
+                    </div>
+                  </div>
+                  <div className="p-6 sm:p-10 space-y-9">
+                    <section>
+                      <h2 className="text-lg font-bold text-itri-dark mb-3">產品概述</h2>
+                      <p className="text-sm text-itri-gray leading-7">本產品為高純度黑碳化矽（SiC）微粉，具備極高硬度、優異的導熱性、良好的耐熱衝擊性與化學穩定性。廣泛應用於高導熱填料、研磨拋光材料、半導體封裝材料、高溫耐火材料及先進陶瓷複合材料。</p>
+                    </section>
+                    <section>
+                      <h2 className="text-lg font-bold text-itri-dark mb-3">基本物理與化學特性</h2>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-sm">
+                        <div className="flex justify-between border-b border-itri-lightgray pb-2"><span className="text-itri-gray">化學式（Formula）</span><strong>SiC</strong></div>
+                        <div className="flex justify-between border-b border-itri-lightgray pb-2"><span className="text-itri-gray">CAS 號碼（CAS No.）</span><strong>409-21-2</strong></div>
+                        <div className="flex justify-between border-b border-itri-lightgray pb-2"><span className="text-itri-gray">外觀（Appearance）</span><strong>綠色至藍黑色／黑色結晶粉末</strong></div>
+                        <div className="flex justify-between border-b border-itri-lightgray pb-2"><span className="text-itri-gray">熔點（Melting Point）</span><strong>2700°C</strong></div>
+                        <div className="flex justify-between border-b border-itri-lightgray pb-2"><span className="text-itri-gray">密度（Density）</span><strong>1.220 g/mL（堆積／鬆裝密度）</strong></div>
+                      </div>
+                    </section>
+                    <section>
+                      <h2 className="text-lg font-bold text-itri-dark mb-3">產品規格與化學成分</h2>
+                      <div className="overflow-x-auto border border-itri-lightgray rounded-xl">
+                        <table className="w-full min-w-[760px] text-sm text-left">
+                          <thead className="bg-itri-extralight text-itri-gray"><tr><th className="p-3 font-bold">檢測項目（Item）</th><th className="p-3 font-bold">SiC-10（微米級）</th><th className="p-3 font-bold">SiC-20（粗粒級）</th><th className="p-3 font-bold">測試方法／備註</th></tr></thead>
+                          <tbody>
+                            {[['碳化矽主含量（SiC）', '≥98.0%（98.61%）', '≥97.0%（實測 97.53%）', '淨純度分析'], ['游離碳（F.C）', '≦0.20%（實測 0.13%）', '≦0.30%（實測 0.22%）', '微量碳分析'], ['三氧化二鐵（Fe₂O₃）', '≦0.20%（實測 0.14%）', '≦0.30%（實測 0.23%）', '金屬雜質分析'], ['平均粒徑（D50）', '9.0～10.0 μm（實測 9.4 μm）', '20.0～22.0 μm（實測 21.8 μm）', '雷射粒徑分析儀']].map(row => (
+                              <tr key={row[0]} className="border-t border-itri-lightgray"><td className="p-3 text-itri-dark">{row[0]}</td><td className="p-3 text-itri-green font-bold">{row[1]}</td><td className="p-3 text-itri-green font-bold">{row[2]}</td><td className="p-3 text-itri-gray">{row[3]}</td></tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                    <section>
+                      <h2 className="text-lg font-bold text-itri-dark mb-3">安全與環保規範</h2>
+                      <div className="space-y-3 text-sm text-itri-gray leading-7">
+                        <p><strong className="text-itri-dark">GHS 分類：</strong>依據 GHS 規範，非屬危險物質或混合物。</p>
+                        <p><strong className="text-itri-dark">廢棄處置：</strong>無特殊危害，處置前請參照當地相關法規處理。</p>
+                      </div>
+                    </section>
+                  </div>
+                </div>
               </div>
             </main>
           )}
