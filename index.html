@@ -1515,8 +1515,18 @@
                         </div>
                       </div>
 
-                      {(product.id === 'ain-nitride' || product.id === 'sic-powder') && (
+                      {(product.datasheet || product.id === 'ain-nitride' || product.id === 'sic-powder') && (
                         <div className="pt-4 border-t border-itri-lightgray flex items-center justify-between gap-3">
+                          {product.datasheet && (
+                            <button
+                              onClick={() => handleDownloadProductSpec(product.nameZH, product.datasheet)}
+                              className="w-full py-2.5 rounded-xl border border-itri-teal text-itri-teal hover:bg-itri-teal/10 text-xs font-bold transition flex items-center justify-center gap-2 shadow-sm active:scale-[0.98]"
+                            >
+                              <IconDownload className="w-3.5 h-3.5" />
+                              <span>下載產品簡介</span>
+                            </button>
+                          )}
+                          {(product.id === 'ain-nitride' || product.id === 'sic-powder') && (
                           <button
                             onClick={() => openProductSpec(product)}
                             className="w-full py-2.5 rounded-xl bg-itri-blue hover:bg-itri-blue/90 text-white text-xs font-bold transition flex items-center justify-center gap-2 shadow-sm active:scale-[0.98]"
@@ -1524,6 +1534,7 @@
                             <IconArrowRight className="w-3.5 h-3.5" />
                             <span>查看產品規格</span>
                           </button>
+                          )}
                         </div>
                       )}
                     </div>
@@ -1747,12 +1758,6 @@
                             <h3 className="text-xl sm:text-2xl font-black text-itri-dark leading-snug">{selectedTechReport.title}</h3>
                           </div>
                           <div className="shrink-0 flex items-center gap-3">
-                            {selectedTechReport.file && (
-                              <a href={selectedTechReport.file} download className="inline-flex items-center gap-1.5 text-xs font-bold text-itri-blue hover:text-itri-teal transition">
-                                <IconDownload className="w-3.5 h-3.5" />
-                                <span>下載原始報告</span>
-                              </a>
-                            )}
                             <button onClick={() => setSelectedTechReport(null)} className="text-xs text-itri-gray hover:text-itri-blue transition">收合報告</button>
                           </div>
                         </div>
