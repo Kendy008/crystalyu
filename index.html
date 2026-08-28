@@ -872,6 +872,78 @@
       }
     ];
 
+    const UI_COPY = {
+      ZH: {
+        home: '首頁', about: '關於晶禹科技', products: '產品與技術', tech: '技術專欄', contact: '聯絡我們', consult: '專案諮詢',
+        categoryLabel: '產品與技術類別', techColumn: '技術專欄 (Technical Column)', consultContact: '專案諮詢與聯絡',
+        heroTag: '無人機載具 · 監控安防 · 專業信任 · 永續未來', heroTitle: '無人機與監控光學', heroSubtitle: '前瞻光學與先進材料領導者',
+        explore: '探索更多產品與技術', enterTech: '進入技術專欄', coreTitle: '三大核心技術領域', viewProducts: '查看核心產品',
+        aboutTag: '關於我們', aboutTitle: '關於晶禹科技 (Crystal Yu Tech)', rd: '研發實力 (R&D Excellence)', sustainability: '永續與環境責任', customization: '專案客製化能力',
+        search: '搜尋無人機、監控或光學產品...', download: '下載產品簡介', specs: '查看產品規格', photo: '產品照片示意圖',
+        techEyebrow: '晶禹前瞻技術', techTitle: '晶禹技術專欄', techBody: '以三大產品主軸整理技術解析、應用指南、材料筆記與製程知識，持續累積可查找的技術內容。', mainAxis: '產品主軸', subcategory: '次分類', published: '已發布', comingSoon: '即將發布', readReport: '閱讀完整報告', collapse: '收合報告', reportSummary: '報告摘要',
+        contactTitle: '聯絡專案專家團隊', name: '姓名 *', company: '公司／單位 *', email: '電子郵件 *', phone: '聯絡電話', category: '需求類別', description: '需求說明 *', send: '送出專案需求', sending: '傳送中...', footerDesc: '無人機載具與監控光學系統 · 高輻射 / 非導電奈米散熱塗料 · 先進材料研發', footerProducts: '產品系列', footerContact: '聯絡資訊', service: '服務專線：', emailLabel: '電子郵件：', address: '公司地址：', tax: '統一編號：', rights: '版權所有'
+      },
+      EN: {
+        home: 'Home', about: 'About Us', products: 'Products & Technology', tech: 'Technical Column', contact: 'Contact Us', consult: 'Project Consultation',
+        categoryLabel: 'Product & Technology Categories', techColumn: 'Technical Column', consultContact: 'Consultation & Contact',
+        heroTag: 'UAV Platforms · Surveillance · Trusted Expertise · Sustainable Future', heroTitle: 'UAV & Surveillance Optics', heroSubtitle: 'Leaders in Advanced Optics and Materials',
+        explore: 'Explore Products & Technology', enterTech: 'Open Technical Column', coreTitle: 'Three Core Technology Areas', viewProducts: 'View Core Products',
+        aboutTag: 'About Us', aboutTitle: 'About Crystal Yu Tech', rd: 'R&D Excellence', sustainability: 'Sustainability & Environmental Responsibility', customization: 'Customized Project Capability',
+        search: 'Search UAV, surveillance, or optical products...', download: 'Download Product Brochure', specs: 'View Product Specifications', photo: 'Product Photo',
+        techEyebrow: 'Crystal Yu Advanced Technology', techTitle: 'Crystal Yu Technical Column', techBody: 'Technical analyses, application guides, material notes, and process knowledge organized around our three product pillars.', mainAxis: 'Product Pillars', subcategory: 'Subcategories', published: 'Published', comingSoon: 'Coming Soon', readReport: 'Read Full Report', collapse: 'Collapse Report', reportSummary: 'Report Summary',
+        contactTitle: 'Contact Our Project Experts', name: 'Name *', company: 'Company / Organization *', email: 'Email *', phone: 'Phone', category: 'Project Type', description: 'Project Details *', send: 'Submit Project Request', sending: 'Sending...', footerDesc: 'UAV platforms and surveillance optics · High-emissivity / insulating nano thermal coatings · Advanced materials development', footerProducts: 'Product Series', footerContact: 'Contact Information', service: 'Service Line: ', emailLabel: 'Email: ', address: 'Address: ', tax: 'Tax ID: ', rights: 'All rights reserved'
+      }
+    };
+
+    const PRODUCT_EN = {
+      'ld-molding-glass-lens': ['Laser Diode (LD) Molded Glass Lens', 'Designed for high-power laser diodes, UAV obstacle-avoidance LiDAR, and optical communications collimation systems, with excellent thermal stability and focal-length precision.'],
+      'lwir-lens': ['LWIR Long-Wave Infrared Lens', 'Designed for UAV thermal imaging, long-range surveillance, automotive night vision, and industrial thermal imaging, delivering lightweight, high-resolution, athermalized performance.'],
+      'silicone-lens': ['High-Temperature Silicone Optical Lens', 'Excellent weatherability and UV resistance for UAV lighting, high-power UV LED packaging, automotive lamps, and specialty industrial lighting.'],
+      'quartz-lens': ['Precision Quartz Optical Lens', 'A core optical component for UAV protective windows, semiconductor exposure equipment, high-power UV laser processing, and precision inspection systems.'],
+      'high-radiation-thermal-coating': ['High-Emissivity Nano Thermal Coating', 'An advanced high-conductivity and high-emissivity formulation that improves thermal radiation and heat transfer for automotive, HVAC, servers, and high-power electronics.'],
+      'non-conductive-thermal-coating': ['Electrically Insulating Nano Thermal Coating', 'Designed for IC packaging, high-temperature electronics, energized substrates, and precision semiconductor components requiring both thermal performance and electrical insulation.'],
+      'optical-hydrogel': ['Water-Soluble Protective Gel', 'A water-soluble protective adhesive for semiconductor, optoelectronic, and PCB processes, including temporary fixation, plating fixture protection, drilling, and optical component protection.'],
+      'anti-fog-film': ['Long-Life Anti-Fog / Anti-Frost Film', 'A hydrophilic functional film for optical windows, lens covers, displays, and equipment windows that maintains clear imaging in temperature-change and high-altitude environments.'],
+      'pei-antistatic-film': ['PEI Antistatic Low-Tack Protective Film', 'Designed for wafer dicing and high-temperature PCB processes, providing excellent static dissipation with clean, residue-free removal.'],
+      'nil-coating': ['Nanoimprint Optical Coating', 'A dedicated coating for AR/VR waveguide lenses, UAV FPV displays, and nanoimprinting of diffractive optical elements.'],
+      'dust-removal-stick': ['High-Cleanliness Residue-Free Dust Removal Stick', 'A patented polymer tip precisely removes micron-scale dust from wafers, molds, and precision optical lens surfaces.'],
+      'antistatic-liquid': ['Long-Life Antistatic Agent', 'Humidity-independent antistatic protection for optical-grade PET and PC packaging materials, with high transparency and excellent coatability.'],
+      'carbon-fiber-powder': ['High-Purity Carbon Fiber Powder', 'Reinforces engineering plastics, UAV carbon-fiber structures, conductive coatings, and carbon-carbon composites to improve strength, conductivity, and heat dissipation.'],
+      'sic-powder': ['High-Purity SiC Powder', 'A high-conductivity functional filler for nano thermal coatings that improves heat transfer, thermal radiation, industrial protection, and stability.'],
+      'ain-nitride': ['High-Purity AlN Powder', 'A high-conductivity, highly insulating functional filler for insulating nano thermal coatings, high-power modules, and electronic component cooling.']
+    };
+    const CATEGORY_EN_DESC = {
+      'optical-solutions': 'Focused on UAV thermal imaging, long-range surveillance, automotive night vision, laser collimation, and precision molded optical components.',
+      'functional-coatings-films': 'Advanced thermal coatings, anti-fog films, water-soluble protection, antistatic films, and nanoimprint coatings for demanding industrial processes.',
+      'advanced-materials': 'Developing high-conductivity composite fillers and functional powders for thermal management and high-performance industrial materials.'
+    };
+    const BADGE_EN = {
+      '全產業高效降溫': 'High-Efficiency Cooling', '絕緣散熱': 'Insulating Thermal Management', '半導體與光電製程防護': 'Semiconductor & Optoelectronics Protection',
+      '長效測試': 'Long-Life Tested', '製程必備': 'Process Essential', 'AR/VR 關鍵': 'AR/VR Essential', '專利清潔': 'Patented Cleaning', '高性能': 'High Performance',
+      '雷射模壓光學': 'Laser Molded Optics', '紅外光學系統': 'Infrared Optical System', '高耐候性': 'High Weatherability', '極致光透': 'Ultra-High Transmission', '高強度': 'High Strength', '散熱塗料關鍵': 'Thermal Coating Essential', '絕緣散熱首選': 'Preferred Insulating Thermal Filler'
+    };
+    const LABEL_EN = {
+      '汽車引擎與排氣系統': 'Automotive Engines & Exhaust', '冰水主機與冷凍空調': 'Chillers & HVAC', '伺服器與AI運算中心': 'Servers & AI Data Centers', '功率半導體與燈具模組': 'Power Semiconductors & Lighting',
+      'IC 封裝與基板': 'IC Packaging & Substrates', '半導體功率元件': 'Power Semiconductor Devices', '車用電子': 'Automotive Electronics', '高溫耗能設備': 'High-Temperature Energy Equipment',
+      '電鍍治具、腔體保護與貴金屬回收': 'Plating Fixtures, Chamber Protection & Precious Metal Recovery', '晶圓/玻璃切割、研磨暫時固定保護': 'Temporary Wafer / Glass Cutting & Grinding Protection', 'PCB 金手指耐溫隔離層': 'PCB Gold Finger High-Temperature Isolation', 'Wafer/Glass 鑽孔製程保護': 'Wafer / Glass Drilling Process Protection', '光學感光元件表面保護': 'Optical Sensor Surface Protection', '感應膠應用 (可搭配奈米壓印, 發展 Micro LED 巨量轉移)': 'Adhesive Applications (Nanoimprint / Micro LED Mass Transfer)',
+      '光學窗口': 'Optical Windows', '鏡頭保護片': 'Lens Covers', '顯示面板': 'Display Panels', '工業設備觀察窗': 'Industrial Equipment Windows', '玻璃 / 壓克力 / PC 板': 'Glass / Acrylic / PC Sheets', '無人機雲台相機': 'UAV Gimbal Cameras', '安防監控鏡頭': 'Surveillance Lenses', '車用抬頭顯示器 (HUD)': 'Automotive Head-Up Displays (HUD)',
+      '無人機測距': 'UAV Distance Measurement', '雷射應用': 'Laser Applications', '半導體': 'Semiconductors', '光通訊': 'Optical Communications', 'LiDAR 模組': 'LiDAR Modules', '無人機熱成像載具': 'UAV Thermal Imaging Platforms', '高空安防監控': 'High-Altitude Surveillance', '車用夜視': 'Automotive Night Vision', '工業熱成像': 'Industrial Thermal Imaging', '無人機照明': 'UAV Lighting', '車用燈具': 'Automotive Lighting', '高功率 LED': 'High-Power LED', 'UV 固化': 'UV Curing',
+      '航拍無人機防護窗': 'UAV Protective Windows', '半導體黃光曝光': 'Semiconductor Photolithography', '工業雷射加工': 'Industrial Laser Processing', '深紫外光學': 'Deep-UV Optics', '散熱塗料': 'Thermal Coatings', '無人機散熱': 'UAV Thermal Management',
+      '無人機機身結構': 'UAV Airframe Structures', '航太工控': 'Aerospace & Industrial Control', '非導電散熱塗料': 'Insulating Thermal Coatings', '無人機電控系統': 'UAV Electronic Control Systems', '無人機 LiDAR': 'UAV LiDAR', '雷射準直': 'Laser Collimation', '精密模壓': 'Precision Molding', '高焦距精度': 'High Focal-Length Precision', '高熱穩定性': 'High Thermal Stability', '無人機熱成像': 'UAV Thermal Imaging', '8-14μm': '8-14μm', '鍺/硫化物': 'Germanium / Sulfides', '無熱化設計': 'Athermalized Design', '耐高溫 200°C': 'Temperature Resistant 200°C', '抗黃變': 'Anti-Yellowing', '高彈性耐候': 'Highly Elastic & Weather Resistant', '輕量化抗震': 'Lightweight & Shock Resistant', '深紫外透過': 'Deep-UV Transmission', '零熱膨脹': 'Zero Thermal Expansion', '高雷射損傷閾值': 'High Laser Damage Threshold', '抗衝擊防護': 'Impact Protection',
+      '全方位熱管理': 'All-Around Thermal Management', '熱輻射率 >0.93': 'Emissivity >0.93', '冷凍空調散熱': 'HVAC Cooling', '伺服器節能降溫': 'Server Energy-Saving Cooling', '高絕緣非導電': 'Highly Insulating', '耐高壓': 'High-Voltage Resistant', '電子零組件保護': 'Electronic Component Protection', 'IC 散熱防護': 'IC Thermal Protection', '水溶性剝離': 'Water-Soluble Removal', '暫時固定保護': 'Temporary Fixation & Protection', '微細製程防護': 'Fine-Process Protection', '環保友善': 'Environmentally Friendly', '接觸角 <5°': 'Contact Angle <5°', '耐久擦拭': 'Durable Wipe Resistance', '極高透明': 'Ultra-High Transparency', '防霧防霜': 'Anti-Fog & Anti-Frost', '表面電阻 10^4~10^6': 'Surface Resistance 10^4~10^6', '耐溫 200°C': 'Temperature Resistance 200°C', '無殘膠': 'Residue-Free', '折射率 1.70-1.90': 'Refractive Index 1.70-1.90', '低收縮率': 'Low Shrinkage', '高解像力': 'High Resolution', 'Class 10 無塵室': 'Class 10 Cleanroom', '零揮發': 'Zero Volatility', '微黏性': 'Micro-Adhesive', '濕度獨立': 'Humidity Independent', '高透明': 'High Transparency', '塗佈性佳': 'Excellent Coatability', '無人機輕量化': 'UAV Lightweighting', '高導電': 'High Conductivity', '耐磨耗': 'Wear Resistant', 'SiC高純度': 'High-Purity SiC', '高導熱填料': 'High-Conductivity Filler', '奈米散熱塗料應用': 'Nano Thermal Coating Applications', '高導熱係數': 'High Thermal Conductivity', '絕緣非導電': 'Electrically Insulating', '低介電': 'Low Dielectric Constant'
+    };
+    const REPORT_EN = {
+      'uav-surveillance-optics': 'UAV & Surveillance Optics', 'laser-optics': 'Laser & Precision Optics', 'environmental-optics': 'Extreme Environments & Optical Materials',
+      'thermal-management': 'Thermal Management', 'semiconductor-process-protection': 'Semiconductor & Precision Process Protection', 'optical-films': 'Optical Films & Surface Functionality',
+      'thermal-fillers': 'High-Conductivity & Insulating Fillers', 'composite-materials': 'Composite Materials & Structural Reinforcement', 'material-development': 'Formulation Development & Production Scale-Up',
+      'lwir-efl-85mm-imaging': ['Uncooled LWIR EFL 85mm Outdoor Thermal Imaging Demonstration', 'Outdoor thermal imaging results from an LWIR EFL 85mm lens, showing temperature contrast and detail resolution across buildings, vehicles, and outdoor objects.'],
+      'uav-thermal-imaging': 'Design Considerations for UAV Thermal Imaging Lenses', 'long-range-surveillance': 'Optical System Planning for Long-Range Aerial Surveillance',
+      'ld-collimation': 'LD Molded Glass Lenses and Laser Collimation', 'precision-molded-optics': 'Focal-Length Precision Management in Precision Molded Optics', 'high-temperature-silicone': 'Selecting Silicone Lenses for High-Temperature and UV Environments', 'quartz-optical-window': 'Quartz Optical Windows for Deep-UV Applications',
+      'copper-fin-nano-coating-evaluation': ['Copper Heat-Sink Fin Performance Evaluation (Bare Copper vs. Nano Thermal Coating)', 'A performance comparison of bare copper and nano-coated extrusion heat-sink fins, evaluating heat transfer, thermal radiation, and end-point cooling.'],
+      'nano-coating-new-formula-environment-optical-calibration': ['Nano Thermal Coating Environmental and Optical Calibration Performance Validation', 'Validation of nano thermal coating performance and infrared measurement consistency under controlled air-conditioning and emissivity calibration.'],
+      'non-conductive-thermal-transfer-analysis': ['Non-Conductive Nano Thermal Coating Heat Transfer and Thermal Field Analysis', 'Air temperature measurements at different heights in a semi-enclosed space, analyzing heat release through thermal radiation and convection.']
+    };
+
     function App() {
       const [currentTab, setCurrentTab] = useState('functional-coatings-films');
       const [activeNav, setActiveNav] = useState('home'); // 修正：將預設頁面從 'products' 變更為 'home'
@@ -880,6 +952,27 @@
       const megaMenuTimeout = useRef(null);
       const [searchQuery, setSearchQuery] = useState('');
       const [lang, setLang] = useState('ZH');
+      const copy = UI_COPY[lang];
+      const categoryTitle = category => lang === 'EN' ? category.titleEN : category.title;
+      const productName = product => lang === 'EN' ? (PRODUCT_EN[product.id]?.[0] || product.name) : product.nameZH;
+      const productDescription = product => lang === 'EN' ? (PRODUCT_EN[product.id]?.[1] || product.desc) : product.desc;
+      const categoryDescription = category => lang === 'EN' ? CATEGORY_EN_DESC[category.id] : category.desc;
+      const badgeText = product => lang === 'EN' ? (BADGE_EN[product.badge] || product.badge) : product.badge;
+      const labelText = label => lang === 'EN' ? (LABEL_EN[label] || label) : label;
+      const productSecondary = product => lang === 'EN' && /[一-龥]/.test(product.name) ? '' : product.name;
+      const relatedProduct = product => lang === 'EN' ? ({ 'LWIR 長波紅外光學鏡頭': 'LWIR Long-Wave Infrared Lens', '非導電型奈米散熱塗料': 'Insulating Nano Thermal Coating', '高輻射奈米散熱塗料': 'High-Emissivity Nano Thermal Coating', '水溶膠': 'Water-Soluble Protective Gel', '長效型靜電消除劑': 'Long-Life Antistatic Agent', '長效型防霧膜 / 防霜膜': 'Long-Life Anti-Fog / Anti-Frost Film', '奈米壓印光學塗料': 'Nanoimprint Optical Coating', '高純度碳纖維粉': 'High-Purity Carbon Fiber Powder', 'SiC 高純度微粉': 'High-Purity SiC Powder', 'AlN高純度粉體': 'High-Purity AlN Powder' }[product] || product) : product;
+      const subcategoryTitle = subcategory => lang === 'EN' ? (REPORT_EN[subcategory.id] || subcategory.title) : subcategory.title;
+      const reportText = report => {
+        const translated = REPORT_EN[report.id];
+        return lang === 'EN' && Array.isArray(translated) ? translated[0] : lang === 'EN' && translated ? translated : report.title;
+      };
+      const reportSummary = report => {
+        const translated = REPORT_EN[report.id];
+        return lang === 'EN' && Array.isArray(translated) ? translated[1] : report.summary;
+      };
+      const reportType = type => lang === 'EN' ? ({ '影像展示': 'Imaging Demonstration', '技術解析': 'Technical Analysis', '應用指南': 'Application Guide', '效能評估': 'Performance Evaluation', '驗證報告': 'Validation Report', '材料筆記': 'Materials Note', '製程知識': 'Process Knowledge', '材料解析': 'Materials Analysis', '研發流程': 'R&D Process' }[type] || type) : type;
+      useEffect(() => { document.title = lang === 'EN' ? 'Crystal Yu Tech | Leaders in Advanced Optics and Materials' : '晶禹科技 Crystal Yu Tech | 前瞻光學與先進材料領導者'; }, [lang]);
+      useEffect(() => { document.documentElement.lang = lang === 'EN' ? 'en' : 'zh-TW'; }, [lang]);
       const [toastMsg, setToastMsg] = useState(null);
       const [techReportGroupId, setTechReportGroupId] = useState(TECH_REPORT_GROUPS[0].id);
       const [techReportSubcategoryId, setTechReportSubcategoryId] = useState(TECH_REPORT_GROUPS[0].subcategories[0].id);
@@ -1138,14 +1231,14 @@
                     onClick={() => { setActiveNav('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                     className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition ${activeNav === 'home' ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10 hover:text-white'}`}
                   >
-                    首頁
+                    {copy.home}
                   </button>
 
                   <button 
                     onClick={() => { setActiveNav('about'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                     className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition ${activeNav === 'about' ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10 hover:text-white'}`}
                   >
-                    關於晶禹科技
+                    {copy.about}
                   </button>
 
                   <div 
@@ -1157,7 +1250,7 @@
                       onClick={() => { setActiveNav('products'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                       className={`px-3.5 py-2 rounded-lg text-sm font-semibold inline-flex items-center gap-1 transition ${activeNav === 'products' ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10 hover:text-white'}`}
                     >
-                      <span>產品與技術</span>
+                      <span>{copy.products}</span>
                       <IconChevronDown className={`w-4 h-4 transition-transform duration-200 ${megaMenuOpen ? 'rotate-180 text-cyan-300' : ''}`} />
                     </button>
 
@@ -1175,7 +1268,7 @@
                             className="w-full text-left p-3 rounded-lg hover:bg-itri-extralight transition group flex flex-col gap-0.5 border-b border-itri-lightgray/60 last:border-0"
                           >
                             <div className="text-sm font-bold text-itri-dark group-hover:text-itri-blue flex items-center justify-between">
-                              <span>{cat.title}</span>
+                              <span>{categoryTitle(cat)}</span>
                               <IconArrowRight className="w-3.5 h-3.5 text-itri-blue opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
                             </div>
                             <div className="text-[11px] text-itri-gray font-mono">{cat.titleEN}</div>
@@ -1189,7 +1282,7 @@
                     onClick={() => { setActiveNav('tech-column'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                     className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 ${activeNav === 'tech-column' ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10 hover:text-white'}`}
                   >
-                    <span>技術專欄</span>
+                    <span>{copy.tech}</span>
                     <span className="relative flex h-2 w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
@@ -1203,7 +1296,7 @@
                     }}
                     className="px-3.5 py-2 rounded-lg text-sm font-semibold text-white/90 hover:bg-white/10 hover:text-white transition"
                   >
-                    聯絡我們
+                    {copy.contact}
                   </button>
                 </nav>
 
@@ -1222,7 +1315,7 @@
                     }}
                     className="hidden lg:inline-flex px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-400 to-teal-400 text-slate-900 font-bold text-xs shadow-md hover:brightness-110 active:scale-95 transition"
                   >
-                    專案諮詢
+                    {copy.consult}
                   </button>
                 </div>
               </div>
@@ -1232,11 +1325,11 @@
             {mobileMenuOpen && (
               <div className="lg:hidden bg-itri-blue border-t border-white/10 shadow-xl transition-all duration-300 animate-fadeIn">
                 <div className="max-w-7xl mx-auto px-4 py-4 space-y-2">
-                  <button onClick={() => { setActiveNav('home'); setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className={`w-full text-left px-4 py-3 rounded-xl text-sm font-semibold transition ${activeNav === 'home' ? 'bg-white/20 text-white font-bold' : 'text-white/90 hover:bg-white/10'}`}>首頁</button>
-                  <button onClick={() => { setActiveNav('about'); setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className={`w-full text-left px-4 py-3 rounded-xl text-sm font-semibold transition ${activeNav === 'about' ? 'bg-white/20 text-white font-bold' : 'text-white/90 hover:bg-white/10'}`}>關於晶禹科技</button>
+                  <button onClick={() => { setActiveNav('home'); setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className={`w-full text-left px-4 py-3 rounded-xl text-sm font-semibold transition ${activeNav === 'home' ? 'bg-white/20 text-white font-bold' : 'text-white/90 hover:bg-white/10'}`}>{copy.home}</button>
+                  <button onClick={() => { setActiveNav('about'); setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className={`w-full text-left px-4 py-3 rounded-xl text-sm font-semibold transition ${activeNav === 'about' ? 'bg-white/20 text-white font-bold' : 'text-white/90 hover:bg-white/10'}`}>{copy.about}</button>
 
                   <div className="pt-2 border-t border-white/10">
-                    <div className="px-4 py-1 text-xs font-bold text-cyan-300 uppercase tracking-wider">產品與技術類別</div>
+                    <div className="px-4 py-1 text-xs font-bold text-cyan-300 uppercase tracking-wider">{copy.categoryLabel}</div>
                     <div className="space-y-1 mt-1">
                       {CATEGORIES.map(cat => (
                         <button
@@ -1249,7 +1342,7 @@
                           }}
                           className={`w-full text-left px-4 py-2.5 rounded-lg text-xs font-medium flex items-center justify-between transition ${activeNav === 'products' && currentTab === cat.id ? 'bg-white/20 text-cyan-300 font-bold' : 'text-white/80 hover:bg-white/10'}`}
                         >
-                          <span>{cat.title}</span>
+                          <span>{categoryTitle(cat)}</span>
                           <IconArrowRight className="w-3.5 h-3.5 opacity-70" />
                         </button>
                       ))}
@@ -1257,7 +1350,7 @@
                   </div>
 
                   <button onClick={() => { setActiveNav('tech-column'); setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className={`w-full text-left px-4 py-3 rounded-xl text-sm font-semibold flex items-center justify-between transition ${activeNav === 'tech-column' ? 'bg-white/20 text-cyan-300 font-bold' : 'text-white/90 hover:bg-white/10'}`}>
-                    <span>技術專欄 (Technical Column)</span>
+                    <span>{copy.techColumn}</span>
                     <span className="text-[10px] bg-cyan-400 text-slate-900 font-bold px-2 py-0.5 rounded-full">HOT</span>
                   </button>
 
@@ -1266,7 +1359,7 @@
                       onClick={() => { const el = document.getElementById('contact-section'); if (el) el.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }} 
                       className="w-full text-center py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-teal-400 text-slate-900 font-bold text-sm shadow-md active:scale-95 transition"
                     >
-                      專案諮詢與聯絡
+                      {copy.consultContact}
                     </button>
                   </div>
                 </div>
@@ -1277,20 +1370,20 @@
           {/* BREADCRUMB */}
           <div className="bg-white border-b border-itri-lightgray py-2.5 text-xs text-itri-gray shadow-sm overflow-x-auto no-scrollbar">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center space-x-2 whitespace-nowrap">
-              <span className="hover:text-itri-blue cursor-pointer" onClick={() => { setActiveNav('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>首頁 (/)</span>
+              <span className="hover:text-itri-blue cursor-pointer" onClick={() => { setActiveNav('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>{copy.home} (/)</span>
               {activeNav !== 'home' && <span>/</span>}
-              {activeNav === 'about' && <span className="text-itri-blue font-semibold">關於晶禹科技</span>}
-              {activeNav === 'tech-column' && <span className="text-itri-blue font-semibold">技術專欄</span>}
+              {activeNav === 'about' && <span className="text-itri-blue font-semibold">{copy.about}</span>}
+              {activeNav === 'tech-column' && <span className="text-itri-blue font-semibold">{copy.tech}</span>}
               {activeNav === 'product-spec' && (
                 <>
-                  <span className="hover:text-itri-blue cursor-pointer" onClick={() => setActiveNav('products')}>產品與技術</span>
+                  <span className="hover:text-itri-blue cursor-pointer" onClick={() => setActiveNav('products')}>{copy.products}</span>
                   <span>/</span>
-                  <span className="text-itri-blue font-semibold">{selectedProductSpec?.nameZH || '產品規格'}</span>
+                  <span className="text-itri-blue font-semibold">{selectedProductSpec?.nameZH || (lang === 'EN' ? 'Product Specifications' : '產品規格')}</span>
                 </>
               )}
               {activeNav === 'products' && (
                 <>
-                  <span className="hover:text-itri-blue cursor-pointer" onClick={() => setActiveNav('products')}>產品與技術</span>
+                  <span className="hover:text-itri-blue cursor-pointer" onClick={() => setActiveNav('products')}>{copy.products}</span>
                   <span>/</span>
                   <span className="text-itri-blue font-semibold">{currentCategoryObj.title}</span>
                 </>
@@ -1308,32 +1401,32 @@
                     <div className="max-w-3xl lg:w-3/5">
                       <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-3.5 rounded-full bg-white/15 backdrop-blur-md border border-cyan-400/30 text-cyan-300 text-xs font-bold mb-4 sm:mb-6">
                         <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-                        無人機載具 · 監控安防 · 專業信任 · 永續未來
+                        {copy.heroTag}
                       </div>
                       <h1 className="text-xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-snug sm:leading-tight mb-4 sm:mb-6">
                         <div className="whitespace-nowrap overflow-x-auto no-scrollbar py-1">
-                          無人機與監控光學 <span className="mx-1">×</span> 前瞻材料
+                          {copy.heroTitle} <span className="mx-1">×</span> Advanced Materials
                         </div>
                         <div className="bg-gradient-to-r from-cyan-300 via-teal-200 to-sky-300 bg-clip-text text-transparent font-extrabold drop-shadow-sm whitespace-nowrap overflow-x-auto no-scrollbar mt-1">
-                          前瞻光學與先進材料領導者
+                          {copy.heroSubtitle}
                         </div>
                       </h1>
                       <p className="text-white/90 text-sm sm:text-lg leading-relaxed font-normal mb-6 sm:mb-8 max-w-2xl">
-                        晶禹科技專注於無人機載具熱成像、高空安防監控、跨領域光學設計（涵蓋車用二次光學、LED 配光、雷射光學模組與微結構模壓技術），並深耕高輻射與非導電型奈米散熱塗層、親水長效防霧薄膜等先進材料。提供全球夥伴從光學模擬、配方調製至良率優化的一站式專業服務。
+                        {lang === 'EN' ? 'Crystal Yu Tech specializes in UAV thermal imaging, high-altitude surveillance, cross-disciplinary optical design, and advanced thermal and anti-fog materials. We provide global partners with one-stop support from optical simulation and formulation to yield optimization.' : '晶禹科技專注於無人機載具熱成像、高空安防監控、跨領域光學設計（涵蓋車用二次光學、LED 配光、雷射光學模組與微結構模壓技術），並深耕高輻射與非導電型奈米散熱塗層、親水長效防霧薄膜等先進材料。提供全球夥伴從光學模擬、配方調製至良率優化的一站式專業服務。'}
                       </p>
                       <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                         <button 
                           onClick={() => { setActiveNav('products'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                           className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 text-slate-900 font-bold text-sm shadow-xl transition flex items-center justify-center gap-2 active:scale-[0.98]"
                         >
-                          <span>探索更多產品與技術</span>
+                          <span>{copy.explore}</span>
                           <IconArrowRight className="w-4 h-4" />
                         </button>
                         <button 
                           onClick={() => { setActiveNav('tech-column'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                           className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/15 hover:bg-white/25 text-white border border-white/30 font-semibold text-sm transition text-center active:scale-[0.98]"
                         >
-                          進入技術專欄
+                          {copy.enterTech}
                         </button>
                       </div>
                     </div>
@@ -1349,8 +1442,8 @@
               {/* THREE CORE CATEGORIES */}
               <section className="py-10 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-itri-dark mb-2 sm:mb-3">三大核心技術領域</h2>
-                  <p className="text-itri-gray text-xs sm:text-sm">支援無人機載具、安防監控、跨領域前瞻光學設計、新材料研發與高良率量產技術</p>
+                  <h2 className="text-2xl sm:text-3xl font-extrabold text-itri-dark mb-2 sm:mb-3">{copy.coreTitle}</h2>
+                  <p className="text-itri-gray text-xs sm:text-sm">{lang === 'EN' ? 'Supporting UAV platforms, surveillance, advanced optical design, new material development, and high-yield manufacturing.' : '支援無人機載具、安防監控、跨領域前瞻光學設計、新材料研發與高良率量產技術'}</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
@@ -1365,11 +1458,11 @@
                         <div className="text-xs font-mono font-bold mb-2 uppercase tracking-wider" style={{ color: cat.accentColor }}>
                           {cat.titleEN}
                         </div>
-                        <h3 className="text-lg sm:text-xl font-bold text-itri-dark group-hover:text-itri-blue transition mb-2 sm:mb-3">{cat.title}</h3>
-                        <p className="text-itri-gray text-xs leading-relaxed mb-6">{cat.desc}</p>
+                        <h3 className="text-lg sm:text-xl font-bold text-itri-dark group-hover:text-itri-blue transition mb-2 sm:mb-3">{categoryTitle(cat)}</h3>
+                        <p className="text-itri-gray text-xs leading-relaxed mb-6">{categoryDescription(cat)}</p>
                       </div>
                       <div className="pt-4 border-t border-itri-lightgray flex items-center justify-between text-xs font-bold" style={{ color: cat.accentColor }}>
-                        <span>查看核心產品</span>
+                        <span>{copy.viewProducts}</span>
                         <IconArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
                       </div>
                     </div>
@@ -1384,25 +1477,25 @@
             <main className="flex-1 py-12">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="rounded-3xl bg-white border border-itri-lightgray p-8 sm:p-12 mb-12 shadow-md">
-                  <span className="text-xs font-bold uppercase tracking-wider text-itri-blue bg-itri-blue/10 px-3 py-1 rounded-full border border-itri-blue/20 mb-4 inline-block">關於我們</span>
-                  <h1 className="text-3xl sm:text-4xl font-black text-itri-dark mb-4">關於晶禹科技 (Crystal Yu Tech)</h1>
+                  <span className="text-xs font-bold uppercase tracking-wider text-itri-blue bg-itri-blue/10 px-3 py-1 rounded-full border border-itri-blue/20 mb-4 inline-block">{copy.aboutTag}</span>
+                  <h1 className="text-3xl sm:text-4xl font-black text-itri-dark mb-4">{copy.aboutTitle}</h1>
                   <p className="text-itri-gray text-sm sm:text-base leading-relaxed max-w-3xl font-normal">
-                    晶禹科技深耕無人機 (Drone) 載具、高空安防監控、多元光學設計（涵蓋長波紅外線 LWIR 鏡頭、車用二次光學、LED 專業照明配光、雷射光學模組及模壓鏡片）與高階功能性高分子領域，致力於突破光學傳輸、極端環境防霧與奈米散熱（含非導電型散熱塗層）的技術邊界。公司結合先進物理光學模擬、材料合成配方與無塵室精密加工技術，為無人機系統、安防監控、車用光電、半導體封裝及雷射應用品牌提供關鍵材料與技術解決方案。
+                    {lang === 'EN' ? copy.aboutTitle.replace('About Crystal Yu Tech', 'Crystal Yu Tech develops UAV platforms, high-altitude surveillance, optical systems including LWIR lenses, automotive secondary optics, professional LED light distribution, laser modules and molded lenses, as well as advanced functional polymers. By combining optical simulation, material formulation, and precision cleanroom processing, we provide key materials and technical solutions for UAV, surveillance, automotive optoelectronics, semiconductor packaging, and laser applications.') : '晶禹科技深耕無人機 (Drone) 載具、高空安防監控、多元光學設計（涵蓋長波紅外線 LWIR 鏡頭、車用二次光學、LED 專業照明配光、雷射光學模組及模壓鏡片）與高階功能性高分子領域，致力於突破光學傳輸、極端環境防霧與奈米散熱（含非導電型散熱塗層）的技術邊界。公司結合先進物理光學模擬、材料合成配方與無塵室精密加工技術，為無人機系統、安防監控、車用光電、半導體封裝及雷射應用品牌提供關鍵材料與技術解決方案。'}
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
                   <div className="bg-white p-6 rounded-2xl border border-itri-lightgray shadow-sm">
-                    <div className="text-itri-blue font-bold text-lg mb-2">研發實力 (R&D Excellence)</div>
-                    <p className="text-itri-gray text-xs leading-relaxed">以應用需求與產品規格為導向，產品發表前依產品特性執行必要的性能驗證、可靠度評估與量測數據確認，並結合外部專業資源及客戶共同開發，持續優化材料配方與光學解決方案，為產品導入建立可追溯的技術依據。</p>
+                    <div className="text-itri-blue font-bold text-lg mb-2">{copy.rd}</div>
+                    <p className="text-itri-gray text-xs leading-relaxed">{lang === 'EN' ? 'Application- and specification-driven development with performance validation, reliability assessment, measurement confirmation, and joint development with customers and external experts.' : '以應用需求與產品規格為導向，產品發表前依產品特性執行必要的性能驗證、可靠度評估與量測數據確認，並結合外部專業資源及客戶共同開發，持續優化材料配方與光學解決方案，為產品導入建立可追溯的技術依據。'}</p>
                   </div>
                   <div className="bg-white p-6 rounded-2xl border border-itri-lightgray shadow-sm">
-                    <div className="text-itri-green font-bold text-lg mb-2">永續與環境責任</div>
-                    <p className="text-itri-gray text-xs leading-relaxed">所有塗料與薄膜材料的開發，皆以國際危害物質管制及環保規範為依歸，持續朝水性、低／零 VOC，以及符合 RoHS、REACH 等國際要求的方向推進。</p>
+                    <div className="text-itri-green font-bold text-lg mb-2">{copy.sustainability}</div>
+                    <p className="text-itri-gray text-xs leading-relaxed">{lang === 'EN' ? 'All coating and film development follows international hazardous-substance controls and environmental standards, with continued progress toward water-based, low- or zero-VOC materials compliant with RoHS and REACH.' : '所有塗料與薄膜材料的開發，皆以國際危害物質管制及環保規範為依歸，持續朝水性、低／零 VOC，以及符合 RoHS、REACH 等國際要求的方向推進。'}</p>
                   </div>
                   <div className="bg-white p-6 rounded-2xl border border-itri-lightgray shadow-sm">
-                    <div className="text-itri-purple font-bold text-lg mb-2">專案客製化能力</div>
-                    <p className="text-itri-gray text-xs leading-relaxed">針對無人機負載重量優化、安防長焦紅外光學、雷射準直需求、特定介面附著性或特殊光學波長穿透率，提供一對一技術協作與快速樣品開發。</p>
+                    <div className="text-itri-purple font-bold text-lg mb-2">{copy.customization}</div>
+                    <p className="text-itri-gray text-xs leading-relaxed">{lang === 'EN' ? 'One-to-one technical collaboration and rapid prototyping for UAV payload optimization, long-range infrared optics, laser collimation, interface adhesion, and specialized wavelength transmission.' : '針對無人機負載重量優化、安防長焦紅外光學、雷射準直需求、特定介面附著性或特殊光學波長穿透率，提供一對一技術協作與快速樣品開發。'}</p>
                   </div>
                 </div>
               </div>
@@ -1422,7 +1515,7 @@
                       onClick={() => setCurrentTab(cat.id)}
                       className={`whitespace-nowrap shrink-0 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-2 ${currentTab === cat.id ? 'bg-itri-blue text-white shadow-md' : 'bg-white text-itri-gray hover:bg-itri-extralight hover:text-itri-dark border border-itri-lightgray'}`}
                     >
-                      <span>{cat.title}</span>
+                      <span>{categoryTitle(cat)}</span>
                     </button>
                   ))}
                 </div>
@@ -1431,8 +1524,8 @@
                 <div className="bg-white rounded-2xl p-5 sm:p-6 border border-itri-lightgray mb-6 sm:mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-6 shadow-sm">
                   <div>
                     <div className="text-xs font-mono font-bold uppercase" style={{ color: currentCategoryObj.accentColor }}>{currentCategoryObj.titleEN}</div>
-                    <h2 className="text-xl sm:text-2xl font-extrabold text-itri-dark mt-1">{currentCategoryObj.title}</h2>
-                    <p className="text-itri-gray text-xs mt-1">{currentCategoryObj.desc}</p>
+                    <h2 className="text-xl sm:text-2xl font-extrabold text-itri-dark mt-1">{categoryTitle(currentCategoryObj)}</h2>
+                    <p className="text-itri-gray text-xs mt-1">{categoryDescription(currentCategoryObj)}</p>
                   </div>
 
                   <div className="relative w-full md:w-72 shrink-0">
@@ -1441,7 +1534,7 @@
                       type="text"
                       value={searchQuery}
                       onChange={e => setSearchQuery(e.target.value)}
-                      placeholder="搜尋無人機、監控或光學產品..."
+                      placeholder={copy.search}
                       className="w-full pl-10 pr-4 py-2.5 bg-itri-extralight border border-itri-lightgray rounded-xl text-xs text-itri-dark focus:outline-none focus:border-itri-blue"
                     />
                   </div>
@@ -1461,23 +1554,23 @@
                           <div className="flex-1 min-w-0">
                             <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-2.5">
                               <span className={`text-[11px] font-bold px-2.5 py-0.5 rounded border ${currentCategoryObj.badgeBg}`}>
-                                {product.badge}
+                                {badgeText(product)}
                               </span>
                               {product.applications.map((app, i) => (
                                 <span key={i} className="text-[10px] text-itri-gray bg-itri-extralight px-1.5 sm:px-2 py-0.5 rounded border border-itri-lightgray whitespace-nowrap">
-                                  {app}
+                                  {labelText(app)}
                                 </span>
                               ))}
                             </div>
 
-                            <h3 className="text-base sm:text-lg font-bold text-itri-dark mb-0.5">{product.nameZH}</h3>
-                            <div className="text-xs font-mono text-itri-gray mb-2.5">{product.name}</div>
-                            <p className="text-itri-gray text-xs leading-relaxed mb-3 whitespace-pre-line">{product.desc}</p>
+                            <h3 className="text-base sm:text-lg font-bold text-itri-dark mb-0.5">{productName(product)}</h3>
+                            {productSecondary(product) && <div className="text-xs font-mono text-itri-gray mb-2.5">{productSecondary(product)}</div>}
+                            <p className="text-itri-gray text-xs leading-relaxed mb-3 whitespace-pre-line">{productDescription(product)}</p>
 
                             <div className="flex flex-wrap gap-1.5">
                               {product.tags.map((tag, idx) => (
                                 <span key={idx} className="text-[10px] text-itri-blue bg-itri-blue/5 border border-itri-blue/20 px-2 py-0.5 rounded">
-                                  #{tag}
+                                  #{labelText(tag)}
                                 </span>
                               ))}
                             </div>
@@ -1506,7 +1599,7 @@
                                   <div className="w-8 h-8 rounded-full bg-white shadow-sm border border-itri-lightgray flex items-center justify-center text-itri-blue">
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                                   </div>
-                                  <span className="text-[10px] font-bold text-itri-dark/80 tracking-wide">產品照片示意圖</span>
+                                  <span className="text-[10px] font-bold text-itri-dark/80 tracking-wide">{copy.photo}</span>
                                   <span className="text-[8px] font-mono text-itri-midgray uppercase">Product Photo Placeholder</span>
                                 </div>
                               )}
@@ -1519,11 +1612,11 @@
                         <div className="pt-4 border-t border-itri-lightgray flex items-center justify-between gap-3">
                           {product.datasheet && (
                             <button
-                              onClick={() => handleDownloadProductSpec(product.nameZH, product.datasheet)}
+                              onClick={() => handleDownloadProductSpec(productName(product), product.datasheet)}
                               className="w-full py-2.5 rounded-xl border border-itri-teal text-itri-teal hover:bg-itri-teal/10 text-xs font-bold transition flex items-center justify-center gap-2 shadow-sm active:scale-[0.98]"
                             >
                               <IconDownload className="w-3.5 h-3.5" />
-                              <span>下載產品簡介</span>
+                              <span>{copy.download}</span>
                             </button>
                           )}
                           {(product.id === 'ain-nitride' || product.id === 'sic-powder') && (
@@ -1532,7 +1625,7 @@
                             className="w-full py-2.5 rounded-xl bg-itri-blue hover:bg-itri-blue/90 text-white text-xs font-bold transition flex items-center justify-center gap-2 shadow-sm active:scale-[0.98]"
                           >
                             <IconArrowRight className="w-3.5 h-3.5" />
-                            <span>查看產品規格</span>
+                            <span>{copy.specs}</span>
                           </button>
                           )}
                         </div>
@@ -1671,20 +1764,20 @@
                   <div className="relative z-10 max-w-3xl">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-itri-blue/10 border border-itri-blue/20 text-itri-blue text-xs font-bold mb-4">
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-                      晶禹前瞻技術
+                      {copy.techEyebrow}
                     </div>
                     <h1 className="text-3xl sm:text-4xl font-black text-itri-dark tracking-tight mb-4">
-                      晶禹技術專欄
+                      {copy.techTitle}
                     </h1>
                     <p className="text-itri-gray text-sm sm:text-base leading-relaxed font-normal">
-                      以三大產品主軸整理技術解析、應用指南、材料筆記與製程知識，持續累積可查找的技術內容。
+                      {copy.techBody}
                     </p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-6 lg:gap-8 items-start">
                   <aside className="bg-white rounded-2xl border border-itri-lightgray p-4 shadow-sm lg:sticky lg:top-24">
-                    <div className="text-xs font-bold text-itri-gray mb-3 px-2">產品主軸</div>
+                    <div className="text-xs font-bold text-itri-gray mb-3 px-2">{copy.mainAxis}</div>
                     <div className="space-y-1.5">
                       {TECH_REPORT_GROUPS.map(group => (
                         <button
@@ -1697,12 +1790,12 @@
                           className={`w-full text-left px-3 py-2.5 rounded-xl text-sm font-bold transition border-l-4 ${techReportGroupId === group.id ? 'bg-itri-extralight text-itri-dark' : 'text-itri-gray hover:bg-itri-extralight'}`}
                           style={{ borderLeftColor: techReportGroupId === group.id ? group.accentColor : 'transparent' }}
                         >
-                          {group.title}
+                          {lang === 'EN' ? (REPORT_EN[group.id] || group.titleEN) : group.title}
                         </button>
                       ))}
                     </div>
                     <div className="border-t border-itri-lightgray mt-4 pt-4">
-                      <div className="text-xs font-bold text-itri-gray mb-2 px-2">次分類</div>
+                      <div className="text-xs font-bold text-itri-gray mb-2 px-2">{copy.subcategory}</div>
                       <div className="space-y-1">
                         {activeTechReportGroup.subcategories.map(subcategory => (
                           <button
@@ -1713,7 +1806,7 @@
                             }}
                             className={`w-full text-left px-3 py-2 rounded-lg text-xs transition ${techReportSubcategoryId === subcategory.id ? 'bg-itri-blue/10 text-itri-blue font-bold' : 'text-itri-gray hover:bg-itri-extralight'}`}
                           >
-                            {subcategory.title}
+                            {subcategoryTitle(subcategory)}
                           </button>
                         ))}
                       </div>
@@ -1724,27 +1817,27 @@
                     <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-5">
                       <div>
                         <div className="text-xs font-mono font-bold uppercase" style={{ color: activeTechReportGroup.accentColor }}>{activeTechReportGroup.titleEN}</div>
-                        <h2 className="text-2xl sm:text-3xl font-extrabold text-itri-dark mt-1">{activeTechSubcategory.title}</h2>
+                        <h2 className="text-2xl sm:text-3xl font-extrabold text-itri-dark mt-1">{subcategoryTitle(activeTechSubcategory)}</h2>
                       </div>
-                      <span className="text-xs text-itri-gray">{activeTechSubcategory.reports.length} 篇報告</span>
+                      <span className="text-xs text-itri-gray">{activeTechSubcategory.reports.length}{lang === 'EN' ? copy.reportCount : ` ${copy.reportCount}`}</span>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {activeTechSubcategory.reports.map(report => (
                         <article key={report.id} className="bg-white rounded-2xl border border-itri-lightgray p-5 sm:p-6 shadow-sm hover:shadow-md hover:border-itri-blue transition flex flex-col min-h-[220px]">
                           <div className="flex items-center justify-between gap-3 mb-5">
-                            <span className="text-[11px] font-bold px-2.5 py-1 rounded border bg-itri-blue/10 text-itri-blue border-itri-blue/20">{report.type}</span>
-                            <span className={`text-[10px] font-bold ${report.status === 'published' ? 'text-itri-green' : 'text-itri-midgray'}`}>{report.status === 'published' ? '已發布' : '即將發布'}</span>
+                            <span className="text-[11px] font-bold px-2.5 py-1 rounded border bg-itri-blue/10 text-itri-blue border-itri-blue/20">{reportType(report.type)}</span>
+                            <span className={`text-[10px] font-bold ${report.status === 'published' ? 'text-itri-green' : 'text-itri-midgray'}`}>{report.status === 'published' ? copy.published : copy.comingSoon}</span>
                           </div>
-                          <h3 className="text-lg font-bold text-itri-dark leading-snug mb-3">{report.title}</h3>
-                          {report.summary && <p className="text-xs text-itri-gray leading-relaxed mb-4">{report.summary}</p>}
+                          <h3 className="text-lg font-bold text-itri-dark leading-snug mb-3">{reportText(report)}</h3>
+                          {report.summary && <p className="text-xs text-itri-gray leading-relaxed mb-4">{reportSummary(report)}</p>}
                           <div className="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-itri-lightgray">
                             {report.relatedProducts.map(product => (
-                              <span key={product} className="text-[10px] text-itri-gray bg-itri-extralight px-2 py-1 rounded border border-itri-lightgray">{product}</span>
+                              <span key={product} className="text-[10px] text-itri-gray bg-itri-extralight px-2 py-1 rounded border border-itri-lightgray">{relatedProduct(product)}</span>
                             ))}
                           </div>
                           {report.status === 'published' && (
-                            <button onClick={() => setSelectedTechReport(report)} className="mt-4 w-full py-2.5 rounded-xl bg-itri-blue text-white text-xs font-bold hover:bg-itri-blue/90 transition">閱讀完整報告</button>
+                            <button onClick={() => setSelectedTechReport(report)} className="mt-4 w-full py-2.5 rounded-xl bg-itri-blue text-white text-xs font-bold hover:bg-itri-blue/90 transition">{copy.readReport}</button>
                           )}
                         </article>
                       ))}
@@ -1754,26 +1847,26 @@
                       <article className="mt-6 bg-white rounded-2xl border border-itri-lightgray p-5 sm:p-8 shadow-md">
                         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
                           <div>
-                            <div className="text-xs font-bold text-itri-green mb-2">{selectedTechReport.type} · {selectedTechReport.date}</div>
-                            <h3 className="text-xl sm:text-2xl font-black text-itri-dark leading-snug">{selectedTechReport.title}</h3>
+                            <div className="text-xs font-bold text-itri-green mb-2">{reportType(selectedTechReport.type)} · {selectedTechReport.date}</div>
+                            <h3 className="text-xl sm:text-2xl font-black text-itri-dark leading-snug">{reportText(selectedTechReport)}</h3>
                           </div>
                           <div className="shrink-0 flex items-center gap-3">
-                            <button onClick={() => setSelectedTechReport(null)} className="text-xs text-itri-gray hover:text-itri-blue transition">收合報告</button>
+                            <button onClick={() => setSelectedTechReport(null)} className="text-xs text-itri-gray hover:text-itri-blue transition">{copy.collapse}</button>
                           </div>
                         </div>
 
                         <div className="bg-itri-extralight rounded-xl p-4 sm:p-5 mb-6">
-                          <div className="text-xs font-bold text-itri-dark mb-2">報告摘要</div>
-                          <p className="text-sm text-itri-gray leading-relaxed">{selectedTechReport.summary}</p>
+                          <div className="text-xs font-bold text-itri-dark mb-2">{copy.reportSummary}</div>
+                          <p className="text-sm text-itri-gray leading-relaxed">{reportSummary(selectedTechReport)}</p>
                         </div>
 
                         <section className="mb-7">
-                          <h4 className="text-sm font-bold text-itri-dark mb-3">一、測試目的</h4>
+                          <h4 className="text-sm font-bold text-itri-dark mb-3">{lang === 'EN' ? '1. Test Purpose' : '一、測試目的'}</h4>
                           <p className="text-xs sm:text-sm text-itri-gray leading-relaxed">{selectedTechReport.purpose}</p>
                         </section>
 
                         <section className="mb-7">
-                          <h4 className="text-sm font-bold text-itri-dark mb-3">二、測試現場與量測照片</h4>
+                          <h4 className="text-sm font-bold text-itri-dark mb-3">{lang === 'EN' ? '2. Test Setup & Measurement Photos' : '二、測試現場與量測照片'}</h4>
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {selectedTechReport.photos.map(photo => (
                               <figure key={photo.src} className="overflow-hidden rounded-xl border border-itri-lightgray bg-itri-extralight">
@@ -1786,7 +1879,7 @@
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-7">
                           <div>
-                            <h4 className="text-sm font-bold text-itri-dark mb-3">三、測試條件與配置</h4>
+                            <h4 className="text-sm font-bold text-itri-dark mb-3">{lang === 'EN' ? '3. Test Conditions & Configuration' : '三、測試條件與配置'}</h4>
                             <div className="space-y-2">
                               {selectedTechReport.testGroups.map(item => (
                                 <div key={item.label} className="flex gap-3 text-xs border-b border-itri-lightgray pb-2">
@@ -1797,7 +1890,7 @@
                             </div>
                           </div>
                           <div>
-                            <h4 className="text-sm font-bold text-itri-dark mb-3">測試標的</h4>
+                            <h4 className="text-sm font-bold text-itri-dark mb-3">{copy.testTarget}</h4>
                             <p className="text-xs text-itri-gray leading-relaxed">{selectedTechReport.testTarget}</p>
                             <div className="mt-4 text-[11px] text-itri-gray">{selectedTechReport.measurementNote || '數據依報告中的量測定義呈現。'}</div>
                           </div>
@@ -1805,7 +1898,7 @@
 
                         {selectedTechReport.measurements?.length > 0 && (
                           <>
-                            <h4 className="text-sm font-bold text-itri-dark mb-3">四、溫度量測數據（°C）</h4>
+                            <h4 className="text-sm font-bold text-itri-dark mb-3">{lang === 'EN' ? '4. Temperature Measurement Data (°C)' : '四、溫度量測數據（°C）'}</h4>
                             <div className="overflow-x-auto mb-7">
                               <table className="w-full min-w-[480px] text-xs text-left border-collapse">
                                 <thead><tr className="bg-itri-extralight text-itri-gray"><th className="p-3 font-bold">{selectedTechReport.measurementLabels?.distance || '量測位置'}</th><th className="p-3 font-bold">{selectedTechReport.measurementLabels?.control || 'T1 對照組'}</th><th className="p-3 font-bold">{selectedTechReport.measurementLabels?.coated || 'T2 實驗組'}</th><th className="p-3 font-bold">{selectedTechReport.measurementLabels?.delta || 'ΔT'}</th></tr></thead>
@@ -1815,13 +1908,13 @@
                           </>
                         )}
 
-                        <h4 className="text-sm font-bold text-itri-dark mb-3">五、數據分析與物理機制</h4>
+                        <h4 className="text-sm font-bold text-itri-dark mb-3">{lang === 'EN' ? '5. Data Analysis & Physical Mechanisms' : '五、數據分析與物理機制'}</h4>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
                           {selectedTechReport.mechanism.map(item => (
                             <div key={item.title} className="rounded-xl border border-itri-lightgray bg-itri-extralight p-4"><div className="text-xs font-bold text-itri-dark mb-2">{item.title}</div><p className="text-[11px] text-itri-gray leading-relaxed">{item.text}</p></div>
                           ))}
                         </div>
-                        <h4 className="text-sm font-bold text-itri-dark mb-3">六、結論與工程評價</h4>
+                        <h4 className="text-sm font-bold text-itri-dark mb-3">{lang === 'EN' ? '6. Conclusions & Engineering Assessment' : '六、結論與工程評價'}</h4>
                         <ul className="space-y-2 mb-7">{selectedTechReport.findings.map(finding => <li key={finding} className="flex gap-2 text-xs text-itri-gray leading-relaxed"><span className="text-itri-green font-bold">✓</span><span>{finding}</span></li>)}</ul>
                       </article>
                     )}
@@ -1836,36 +1929,36 @@
           <section id="contact-section" className="py-20 bg-white border-t border-itri-lightgray shadow-inner">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-extrabold text-itri-dark mb-3">聯絡專案專家團隊</h2>
-                <p className="text-itri-gray text-sm">請填寫以下資訊，我們的技術團隊將於 24 小時內與您聯繫</p>
+                <h2 className="text-3xl font-extrabold text-itri-dark mb-3">{copy.contactTitle}</h2>
+                <p className="text-itri-gray text-sm">{lang === 'EN' ? 'Complete the form below and our technical team will contact you within 24 hours.' : '請填寫以下資訊，我們的技術團隊將於 24 小時內與您聯繫'}</p>
               </div>
 
               <form onSubmit={handleContactSubmit} className="bg-itri-extralight rounded-2xl p-6 sm:p-10 border border-itri-lightgray shadow-sm space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-semibold text-itri-dark mb-2">姓名 *</label>
+                    <label className="block text-xs font-semibold text-itri-dark mb-2">{copy.name}</label>
                     <input 
                       type="text"
                       required
                       value={contactForm.name}
                       onChange={e => handleContactInputChange('name', e.target.value)}
-                      placeholder="您的姓名"
+                      placeholder={lang === 'EN' ? 'Your name' : '您的姓名'}
                       className="w-full bg-white border border-itri-lightgray rounded-xl px-4 py-3 text-sm text-itri-dark placeholder-itri-midgray focus:outline-none focus:border-itri-blue"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-itri-dark mb-2">公司／單位 *</label>
+                    <label className="block text-xs font-semibold text-itri-dark mb-2">{copy.company}</label>
                     <input 
                       type="text"
                       required
                       value={contactForm.company}
                       onChange={e => handleContactInputChange('company', e.target.value)}
-                      placeholder="公司或機構名稱"
+                      placeholder={lang === 'EN' ? 'Company or organization name' : '公司或機構名稱'}
                       className="w-full bg-white border border-itri-lightgray rounded-xl px-4 py-3 text-sm text-itri-dark placeholder-itri-midgray focus:outline-none focus:border-itri-blue"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-itri-dark mb-2">電子郵件 *</label>
+                    <label className="block text-xs font-semibold text-itri-dark mb-2">{copy.email}</label>
                     <input 
                       type="email"
                       required
@@ -1876,7 +1969,7 @@
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-itri-dark mb-2">聯絡電話</label>
+                    <label className="block text-xs font-semibold text-itri-dark mb-2">{copy.phone}</label>
                     <input 
                       type="tel"
                       value={contactForm.phone}
@@ -1888,28 +1981,28 @@
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-itri-dark mb-2">需求類別</label>
+                  <label className="block text-xs font-semibold text-itri-dark mb-2">{copy.category}</label>
                   <select
                     value={contactForm.category}
                     onChange={e => handleContactInputChange('category', e.target.value)}
                     className="w-full bg-white border border-itri-lightgray rounded-xl px-4 py-3 text-sm text-itri-dark focus:outline-none focus:border-itri-blue"
                   >
-                    <option value="無人機熱成像與監控光學鏡頭專案">無人機熱成像與監控光學鏡頭專案 (UAV & Surveillance Optics)</option>
-                    <option value="共同研發與良率優化(Co-Development & Yield Optimization)">共同研發與良率優化 (Co-Development & Yield Optimization)</option>
-                    <option value="跨領域光學設計與開發試作">跨領域光學設計與開發試作 (車用/LED/雷射)</option>
-                    <option value="功能性塗料 / 防霧膜試塗與評估">功能性塗料 / 防霧膜試塗與評估</option>
-                    <option value="其他專案合作">其他專案合作</option>
+                    <option value="無人機熱成像與監控光學鏡頭專案">{lang === 'EN' ? 'UAV Thermal Imaging & Surveillance Optics' : '無人機熱成像與監控光學鏡頭專案 (UAV & Surveillance Optics)'}</option>
+                    <option value="共同研發與良率優化(Co-Development & Yield Optimization)">{lang === 'EN' ? 'Co-Development & Yield Optimization' : '共同研發與良率優化 (Co-Development & Yield Optimization)'}</option>
+                    <option value="跨領域光學設計與開發試作">{lang === 'EN' ? 'Cross-Disciplinary Optical Design & Prototyping' : '跨領域光學設計與開發試作 (車用/LED/雷射)'}</option>
+                    <option value="功能性塗料 / 防霧膜試塗與評估">{lang === 'EN' ? 'Functional Coating / Anti-Fog Film Evaluation' : '功能性塗料 / 防霧膜試塗與評估'}</option>
+                    <option value="其他專案合作">{lang === 'EN' ? 'Other Project Collaboration' : '其他專案合作'}</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-itri-dark mb-2">需求說明 *</label>
+                  <label className="block text-xs font-semibold text-itri-dark mb-2">{copy.description}</label>
                   <textarea 
                     rows="4"
                     required
                     value={contactForm.description}
                     onChange={e => handleContactInputChange('description', e.target.value)}
-                    placeholder="請簡述您的需求、無人機載重或光學規格標的..."
+                    placeholder={lang === 'EN' ? 'Briefly describe your requirements, UAV payload, or optical specifications...' : '請簡述您的需求、無人機載重或光學規格標的...'}
                     className="w-full bg-white border border-itri-lightgray rounded-xl px-4 py-3 text-sm text-itri-dark placeholder-itri-midgray focus:outline-none focus:border-itri-blue"
                   />
                 </div>
@@ -1920,7 +2013,7 @@
                     disabled={isContactSubmitting}
                     className="w-full sm:w-auto px-10 py-3.5 rounded-xl bg-gradient-to-r from-itri-blue to-itri-teal text-white font-bold text-sm shadow-lg hover:shadow-xl hover:brightness-105 active:scale-95 transition disabled:opacity-50"
                   >
-                    {isContactSubmitting ? '傳送中...' : '送出專案需求'}
+                    {isContactSubmitting ? copy.sending : copy.send}
                   </button>
                 </div>
               </form>
@@ -1949,28 +2042,28 @@
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <div>
                   <div className="text-white font-bold text-base mb-2">晶禹科技 Crystal Yu Tech</div>
-                  <p className="text-itri-midgray text-xs leading-relaxed">無人機載具與監控光學系統 · 高輻射 / 非導電奈米散熱塗料 · 先進材料研發</p>
+                  <p className="text-itri-midgray text-xs leading-relaxed">{copy.footerDesc}</p>
                 </div>
                 <div>
-                  <div className="text-white font-semibold mb-2">產品系列</div>
+                  <div className="text-white font-semibold mb-2">{copy.footerProducts}</div>
                   <ul className="space-y-1.5 text-itri-midgray">
                     {CATEGORIES.map(c => (
-                      <li key={c.id} className="hover:text-cyan-300 cursor-pointer active:text-cyan-400" onClick={() => { setCurrentTab(c.id); setActiveNav('products'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>{c.title}</li>
+                      <li key={c.id} className="hover:text-cyan-300 cursor-pointer active:text-cyan-400" onClick={() => { setCurrentTab(c.id); setActiveNav('products'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>{categoryTitle(c)}</li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <div className="text-white font-semibold mb-2">聯絡資訊</div>
+                  <div className="text-white font-semibold mb-2">{copy.footerContact}</div>
                   <p className="text-itri-midgray leading-relaxed">
-                    服務專線：<a href="tel:+886426222720" className="underline hover:text-cyan-300">+886 4 26222720</a><br />
-                    電子郵件：<a href="mailto:kendyjojo@gmail.com" className="underline hover:text-cyan-300">kendyjojo@gmail.com</a><br />
-                    公司地址：43616 台中市清水區星海路18巷17號<br />
-                    統一編號：94020346
+                    {copy.service}<a href="tel:+886426222720" className="underline hover:text-cyan-300">+886 4 26222720</a><br />
+                    {copy.emailLabel}<a href="mailto:kendyjojo@gmail.com" className="underline hover:text-cyan-300">kendyjojo@gmail.com</a><br />
+                    {copy.address}43616 台中市清水區星海路18巷17號<br />
+                    {copy.tax}94020346
                   </p>
                 </div>
               </div>
               <div className="pt-8 border-t border-gray-700 text-center text-itri-midgray text-[11px]">
-                © {new Date().getFullYear()} Crystal Yu Tech Co., Ltd. All rights reserved. 晶禹科技有限公司 版權所有
+                © {new Date().getFullYear()} Crystal Yu Tech Co., Ltd. {copy.rights}{lang === 'ZH' ? ' 晶禹科技有限公司' : ''}
               </div>
             </div>
           </footer>
