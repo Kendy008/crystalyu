@@ -968,7 +968,22 @@
 
     function App() {
       const [currentTab, setCurrentTab] = useState('functional-coatings-films');
-      const [activeNav, setActiveNav] = useState('home'); // 修正：將預設頁面從 'products' 變更為 'home'
+      const ROUTE_TO_NAV = {
+        '/': 'home',
+        '/about': 'about',
+        '/products': 'products',
+        '/blog': 'tech-column',
+        '/contact': 'contact'
+      };
+      const NAV_TO_ROUTE = {
+        home: '/',
+        about: '/about',
+        products: '/products',
+        'tech-column': '/blog',
+        contact: '/contact'
+      };
+      const getRoute = () => window.location.pathname.replace(/\/+$/, '') || '/';
+      const [activeNav, setActiveNav] = useState(() => ROUTE_TO_NAV[getRoute()] || 'home');
       const [megaMenuOpen, setMegaMenuOpen] = useState(false);
       const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
       const megaMenuTimeout = useRef(null);
@@ -1013,6 +1028,33 @@
       const [contactModalOpen, setContactModalOpen] = useState(false);
       const [contactModalMessage, setContactModalMessage] = useState('');
       const iframeRef = useRef(null);
+
+      const navigateTo = (nav) => {
+        const route = NAV_TO_ROUTE[nav] || '/';
+        if (getRoute() !== route) window.history.pushState({ nav }, '', route);
+        setActiveNav(nav);
+        setMobileMenuOpen(false);
+        setMegaMenuOpen(false);
+        if (nav === 'contact') {
+          requestAnimationFrame(() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' }));
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      };
+
+      useEffect(() => {
+        const handlePopState = () => {
+          setActiveNav(ROUTE_TO_NAV[getRoute()] || 'home');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+        window.addEventListener('popstate', handlePopState);
+        return () => window.removeEventListener('popstate', handlePopState);
+      }, []);
+
+      useEffect(() => {
+        const canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) canonical.href = `https://crystalyu.com.tw${NAV_TO_ROUTE[activeNav] || '/'}`;
+      }, [activeNav]);
 
       const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSf4sluUMOvij6gZUXjaz-yzDH2ht4zL18WC2jqhgilAtaqRfQ/formResponse';
       const GOOGLE_FORM_FIELDS = {
@@ -1210,7 +1252,7 @@
                 {/* LOGO */}
                 <div 
                   className="flex items-center gap-2 sm:gap-3 cursor-pointer group shrink-0"
-                  onClick={() => { setActiveNav('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                  onClick={() => navigateTo('home')}
                 >
                   <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg overflow-hidden bg-white shadow-md group-hover:scale-105 transition shrink-0">
                     <img src="mywork/晶禹科技logo.png" alt="Crystal Yu Tech Logo" className="w-full h-full object-contain p-1" />
@@ -1250,14 +1292,14 @@
                 {/* DESKTOP NAVIGATION */}
                 <nav className="hidden lg:flex items-center space-x-1 lg:space-x-2">
                   <button 
-                    onClick={() => { setActiveNav('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                    onClick={() => navigateTo('home')}
                     className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition ${activeNav === 'home' ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10 hover:text-white'}`}
                   >
                     {copy.home}
                   </button>
 
                   <button 
-                    onClick={() => { setActiveNav('about'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                    onClick={() => navigateTo('about')}
                     className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition ${activeNav === 'about' ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10 hover:text-white'}`}
                   >
                     {copy.about}
@@ -1269,7 +1311,7 @@
                     onMouseLeave={handleMenuMouseLeave}
                   >
                     <button 
-                      onClick={() => { setActiveNav('products'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                      onClick={() => navigateTo('products')}
                       className={`px-3.5 py-2 rounded-lg text-sm font-semibold inline-flex items-center gap-1 transition ${activeNav === 'products' ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10 hover:text-white'}`}
                     >
                       <span>{copy.products}</span>
@@ -1283,7 +1325,7 @@
                             key={cat.id}
                             onClick={() => {
                               setCurrentTab(cat.id);
-                              setActiveNav('products');
+                              navigateTo('products');
                               setMegaMenuOpen(false);
                               window.scrollTo({ top: 0, behavior: 'smooth' });
                             }}
@@ -1301,7 +1343,7 @@
                   </div>
 
                   <button 
-                    onClick={() => { setActiveNav('tech-column'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                    onClick={() => navigateTo('tech-column')}
                     className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 ${activeNav === 'tech-column' ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10 hover:text-white'}`}
                   >
                     <span>{copy.tech}</span>
@@ -1313,10 +1355,9 @@
 
                   <button 
                     onClick={() => {
-                      const el = document.getElementById('contact-section');
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      navigateTo('contact');
                     }}
-                    className="px-3.5 py-2 rounded-lg text-sm font-semibold text-white/90 hover:bg-white/10 hover:text-white transition"
+                    className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition ${activeNav === 'contact' ? 'bg-white/20 text-white' : 'text-white/90 hover:bg-white/10 hover:text-white'}`}
                   >
                     {copy.contact}
                   </button>
@@ -1332,8 +1373,7 @@
                   </button>
                   <button 
                     onClick={() => {
-                      const el = document.getElementById('contact-section');
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      navigateTo('contact');
                     }}
                     className="hidden lg:inline-flex px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-400 to-teal-400 text-slate-900 font-bold text-xs shadow-md hover:brightness-110 active:scale-95 transition"
                   >
@@ -1347,8 +1387,8 @@
             {mobileMenuOpen && (
               <div className="lg:hidden bg-itri-blue border-t border-white/10 shadow-xl transition-all duration-300 animate-fadeIn">
                 <div className="max-w-7xl mx-auto px-4 py-4 space-y-2">
-                  <button onClick={() => { setActiveNav('home'); setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className={`w-full text-left px-4 py-3 rounded-xl text-sm font-semibold transition ${activeNav === 'home' ? 'bg-white/20 text-white font-bold' : 'text-white/90 hover:bg-white/10'}`}>{copy.home}</button>
-                  <button onClick={() => { setActiveNav('about'); setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className={`w-full text-left px-4 py-3 rounded-xl text-sm font-semibold transition ${activeNav === 'about' ? 'bg-white/20 text-white font-bold' : 'text-white/90 hover:bg-white/10'}`}>{copy.about}</button>
+                  <button onClick={() => navigateTo('home')} className={`w-full text-left px-4 py-3 rounded-xl text-sm font-semibold transition ${activeNav === 'home' ? 'bg-white/20 text-white font-bold' : 'text-white/90 hover:bg-white/10'}`}>{copy.home}</button>
+                  <button onClick={() => navigateTo('about')} className={`w-full text-left px-4 py-3 rounded-xl text-sm font-semibold transition ${activeNav === 'about' ? 'bg-white/20 text-white font-bold' : 'text-white/90 hover:bg-white/10'}`}>{copy.about}</button>
 
                   <div className="pt-2 border-t border-white/10">
                     <div className="px-4 py-1 text-xs font-bold text-cyan-300 uppercase tracking-wider">{copy.categoryLabel}</div>
@@ -1358,7 +1398,7 @@
                           key={cat.id}
                           onClick={() => {
                             setCurrentTab(cat.id);
-                            setActiveNav('products');
+                            navigateTo('products');
                             setMobileMenuOpen(false);
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                           }}
@@ -1371,14 +1411,14 @@
                     </div>
                   </div>
 
-                  <button onClick={() => { setActiveNav('tech-column'); setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className={`w-full text-left px-4 py-3 rounded-xl text-sm font-semibold flex items-center justify-between transition ${activeNav === 'tech-column' ? 'bg-white/20 text-cyan-300 font-bold' : 'text-white/90 hover:bg-white/10'}`}>
+                  <button onClick={() => navigateTo('tech-column')} className={`w-full text-left px-4 py-3 rounded-xl text-sm font-semibold flex items-center justify-between transition ${activeNav === 'tech-column' ? 'bg-white/20 text-cyan-300 font-bold' : 'text-white/90 hover:bg-white/10'}`}>
                     <span>{copy.techColumn}</span>
                     <span className="text-[10px] bg-cyan-400 text-slate-900 font-bold px-2 py-0.5 rounded-full">HOT</span>
                   </button>
 
                   <div className="pt-3 border-t border-white/10 flex gap-2">
                     <button 
-                      onClick={() => { const el = document.getElementById('contact-section'); if (el) el.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }} 
+                      onClick={() => navigateTo('contact')}
                       className="w-full text-center py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-teal-400 text-slate-900 font-bold text-sm shadow-md active:scale-95 transition"
                     >
                       {copy.consultContact}
@@ -1392,20 +1432,21 @@
           {/* BREADCRUMB */}
           <div className="bg-white border-b border-itri-lightgray py-2.5 text-xs text-itri-gray shadow-sm overflow-x-auto no-scrollbar">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center space-x-2 whitespace-nowrap">
-              <span className="hover:text-itri-blue cursor-pointer" onClick={() => { setActiveNav('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>{copy.home} (/)</span>
+              <span className="hover:text-itri-blue cursor-pointer" onClick={() => navigateTo('home')}>{copy.home} (/)</span>
               {activeNav !== 'home' && <span>/</span>}
               {activeNav === 'about' && <span className="text-itri-blue font-semibold">{copy.about}</span>}
               {activeNav === 'tech-column' && <span className="text-itri-blue font-semibold">{copy.tech}</span>}
+              {activeNav === 'contact' && <span className="text-itri-blue font-semibold">{copy.contact}</span>}
               {activeNav === 'product-spec' && (
                 <>
-                  <span className="hover:text-itri-blue cursor-pointer" onClick={() => setActiveNav('products')}>{copy.products}</span>
+                  <span className="hover:text-itri-blue cursor-pointer" onClick={() => navigateTo('products')}>{copy.products}</span>
                   <span>/</span>
                   <span className="text-itri-blue font-semibold">{selectedProductSpec?.nameZH || (lang === 'EN' ? 'Product Specifications' : '產品規格')}</span>
                 </>
               )}
               {activeNav === 'products' && (
                 <>
-                  <span className="hover:text-itri-blue cursor-pointer" onClick={() => setActiveNav('products')}>{copy.products}</span>
+                  <span className="hover:text-itri-blue cursor-pointer" onClick={() => navigateTo('products')}>{copy.products}</span>
                   <span>/</span>
                   <span className="text-itri-blue font-semibold">{currentCategoryObj.title}</span>
                 </>
@@ -1438,14 +1479,14 @@
                       </p>
                       <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                         <button 
-                          onClick={() => { setActiveNav('products'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                          onClick={() => navigateTo('products')}
                           className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 text-slate-900 font-bold text-sm shadow-xl transition flex items-center justify-center gap-2 active:scale-[0.98]"
                         >
                           <span>{copy.explore}</span>
                           <IconArrowRight className="w-4 h-4" />
                         </button>
                         <button 
-                          onClick={() => { setActiveNav('tech-column'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                          onClick={() => navigateTo('tech-column')}
                           className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/15 hover:bg-white/25 text-white border border-white/30 font-semibold text-sm transition text-center active:scale-[0.98]"
                         >
                           {copy.enterTech}
@@ -1472,7 +1513,7 @@
                   {CATEGORIES.map(cat => (
                     <div 
                       key={cat.id}
-                      onClick={() => { setCurrentTab(cat.id); setActiveNav('products'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                      onClick={() => { setCurrentTab(cat.id); navigateTo('products'); }}
                       className="bg-white rounded-2xl p-6 sm:p-8 border border-itri-lightgray hover:border-itri-blue shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer flex flex-col justify-between relative overflow-hidden active:scale-[0.99]"
                     >
                       <div className="absolute top-0 left-0 right-0 h-1.5" style={{ backgroundColor: cat.accentColor }}></div>
@@ -1666,7 +1707,7 @@
               <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="bg-white rounded-2xl border border-itri-lightgray shadow-sm overflow-hidden">
                   <div className="p-6 sm:p-10 border-b border-itri-lightgray bg-gradient-to-r from-itri-purple/10 to-white">
-                    <button onClick={() => { setActiveNav('products'); setCurrentTab('advanced-materials'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="inline-flex items-center gap-1.5 text-xs font-bold text-itri-blue hover:text-itri-teal transition mb-5">
+                    <button onClick={() => { setCurrentTab('advanced-materials'); navigateTo('products'); }} className="inline-flex items-center gap-1.5 text-xs font-bold text-itri-blue hover:text-itri-teal transition mb-5">
                       <span aria-hidden="true">←</span>
                       返回先進材料開發
                     </button>
@@ -1723,7 +1764,7 @@
               <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="bg-white rounded-2xl border border-itri-lightgray shadow-sm overflow-hidden">
                   <div className="p-6 sm:p-10 border-b border-itri-lightgray bg-gradient-to-r from-itri-blue/10 to-white">
-                    <button onClick={() => { setActiveNav('products'); setCurrentTab('advanced-materials'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="inline-flex items-center gap-1.5 text-xs font-bold text-itri-blue hover:text-itri-teal transition mb-5">
+                    <button onClick={() => { setCurrentTab('advanced-materials'); navigateTo('products'); }} className="inline-flex items-center gap-1.5 text-xs font-bold text-itri-blue hover:text-itri-teal transition mb-5">
                       <span aria-hidden="true">←</span>
                       返回先進材料開發
                     </button>
@@ -2046,8 +2087,7 @@
           <div className="sm:hidden fixed bottom-4 right-4 z-30">
             <button 
               onClick={() => {
-                const el = document.getElementById('contact-section');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
+                navigateTo('contact');
               }}
               className="bg-itri-blue text-white p-3.5 rounded-full shadow-2xl flex items-center justify-center border border-white/20 active:scale-90 transition"
               aria-label="快速諮詢"
@@ -2070,7 +2110,7 @@
                   <div className="text-white font-semibold mb-2">{copy.footerProducts}</div>
                   <ul className="space-y-1.5 text-itri-midgray">
                     {CATEGORIES.map(c => (
-                      <li key={c.id} className="hover:text-cyan-300 cursor-pointer active:text-cyan-400" onClick={() => { setCurrentTab(c.id); setActiveNav('products'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>{categoryTitle(c)}</li>
+                      <li key={c.id} className="hover:text-cyan-300 cursor-pointer active:text-cyan-400" onClick={() => { setCurrentTab(c.id); navigateTo('products'); }}>{categoryTitle(c)}</li>
                     ))}
                   </ul>
                 </div>

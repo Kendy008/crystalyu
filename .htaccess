@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# Let the single-page app handle the primary routes.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(about|products|blog|contact)/?$ /index.html [L]
